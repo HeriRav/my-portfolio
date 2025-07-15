@@ -1,5 +1,4 @@
-import { Outlet } from 'react-router-dom'
-import './App.css'
+import About from './components/about/index.tsx'
 import Layout from './components/layout'
 
 function App() {
@@ -7,7 +6,7 @@ function App() {
   return (
     <>
       <Layout>
-        <Outlet />
+        <About />
       </Layout>
     </>
   )
