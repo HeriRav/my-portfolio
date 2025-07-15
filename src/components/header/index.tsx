@@ -112,17 +112,17 @@ const Header: React.FC<HeaderProps> = () => {
         {/* Modal for mobile menu */}
         {isOpen && (
           <div
-            className="animate-popIn fixed inset-0 flex items-center justify-center bg-black/70 bg-opacity-80"
+            className="animate-popIn fixed inset-0 bg-black/70 bg-opacity-80"
             onClick={closeMenu}
           >
             <div
-              className="relative w-screen h-screen p-5 bg-primary shadow-lg"
+              className="relative w-screen h-screen p-5 bg-primary min-h-screen flex items-center justify-center shadow-lg"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close button */}
               <button
                 onClick={closeMenu}
-                className="absolute text-black top-7 right-7"
+                className="absolute text-black top-7 right-12"
               >
                 <svg
                   className="w-6 h-6"
