@@ -8,13 +8,13 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <section className="animate-fadeIn">
       <Header siteTitle="Mon portfolio" />
       <main>
         {children}
       </main>
       <Footer />
-    </>
+    </section>
   );
 };
 
