@@ -1,8 +1,8 @@
 export const navigationLinks = [
-  { label: "Accueil", to: "HOME" },
-  { label: "À propos", to: "ABOUT" },
-  { label: "Mes formations", to: "FORMATIONS" },
-  { label: "Mes compétences", to: "SKILLS" },
-  { label: "Mon portfolio", to: "PORTFOLIO" },
+  { label: "Home", to: "HOME" },
+  { label: "About", to: "ABOUT" },
+  { label: "Formations", to: "FORMATIONS" },
+  { label: "Skills", to: "SKILLS" },
+  { label: "Portfolio", to: "PORTFOLIO" },
   { label: "Contact", to: "CONTACT" },
 ];
