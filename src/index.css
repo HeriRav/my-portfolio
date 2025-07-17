@@ -1,21 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #8a2be2;
-  --color-secondary: #b98eff;
-  --color-dark: #0f0f0f;
-  --color-light: #fbfbfb;
-  --color-light-grey: #eaeaea;
-  --color-footer: #2b2b2b;
+  --color-primary: #8a2be2; /* Blue Violet */
+  --color-primary-opacity: rgba(138, 43, 226, 0.95); /* Blue Violet with opacity */
+  --color-secondary: #2BE28A; /* Emerald */
+  --color-primary-hover: #b98eff; /* Lavender (floral) */
+  --color-secondary-hover: #1B4F08; /* Cal Poly green */
+  --color-dark: #0f0f0f; /* Night */
+  --color-dark-grey: #222222; /* Eerie black */
+  --color-light: #fbfbfb; /* White */
+  --color-light-grey: #eaeaea; /* Platinium */
+  --color-footer: #2b2b2b; /* Jet */
+}
+
+@layer components {
+  .btn-primary {
+    @apply w-full md:w-52 mx-auto rounded-full hover:bg-primary hover:!text-primary-hover px-6 py-4 bg-transparent !text-primary font-semibold border-2 border-primary transition-colors duration-300;
+  }
+  .btn-secondary {
+    @apply w-full md:w-52 mx-auto rounded-full hover:bg-secondary hover:!text-secondary-hover px-6 py-4 bg-transparent !text-secondary font-semibold border-2 border-secondary transition-colors duration-300;
+  }
+  .icon{
+    @apply rounded-full p-2 border-2 border-secondary hover:bg-secondary-hover hover:border-secondary-hover transition-colors duration-300
+  }
 }
 
 * {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-/* Ou plus spécifiquement */
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 button {
@@ -40,7 +55,11 @@ legend {
   position: fixed;
   width: 100%;
   transition: height 0.3s ease, padding 0.3s ease;
-  z-index: 1000;
+  z-index: 99;
+}
+
+.navbar nav {
+  transition: padding 0.3s ease;
 }
 
 .navbar nav a {
@@ -49,16 +68,12 @@ legend {
 
 /* Navbar réduite au scroll */
 .navbar.scrolled nav {
-  background-color: var(--color-primary);
-  padding: 16px O !important;
+  background-color: var(--color-primary-opacity);
+  padding: 16px 0 !important;
 }
 
 .navbar.scrolled nav img {
-  max-width: 40px;
-}
-
-.nav_mobile {
-/* background-color: var(--color-primary); */
+  max-width: 60px;
 }
 
 .clippy {
