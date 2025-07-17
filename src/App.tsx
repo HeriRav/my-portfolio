@@ -1,6 +1,6 @@
 import Layout from './components/layout'
-import Home from './components/home/index.tsx'
-import About from './components/about/index.tsx'
+import Home from './pages/home/index.tsx'
+import About from './pages/about/index.tsx'
 
 function App() {
 
