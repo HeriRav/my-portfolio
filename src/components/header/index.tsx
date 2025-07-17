@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { navigationLinks } from "./data";
 import clsx from "clsx";
-import Logo from "../../components/header/images/home-logo.png"
+import Logo from "../../components/header/assets/logo-bg-white.png"
 
 interface HeaderProps {
   siteTitle: string;
@@ -38,17 +38,9 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 0);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -58,7 +50,7 @@ const Header: React.FC<HeaderProps> = () => {
       const offset = 100;
       let current = "HOME"; // fallback
 
-      for (let id of sectionIds) {
+      for (const id of sectionIds) {
         const section = document.getElementById(id);
         if (section) {
           const rect = section.getBoundingClientRect();
@@ -82,11 +74,11 @@ const Header: React.FC<HeaderProps> = () => {
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="container fixed flex items-center max-w-full">
         {/* Hamburger button */}
-        <nav className="lg:hidden nav_mobile px-8 py-4 flex items-center justify-between w-full">
+        <div className="lg:hidden bg-primary/95 px-8 py-4 flex items-center justify-between w-full">
           <img
             src={Logo}
             alt=""
-            className="pointer-events-none max-w-[50px] w-full"
+            className="pointer-events-none max-w-[50px] w-full rounded-full"
           />  
           <button
           onClick={toggleMenu}
@@ -107,7 +99,7 @@ const Header: React.FC<HeaderProps> = () => {
               />
             </svg>
           </button>
-        </nav>
+        </div>
       
         {/* Modal for mobile menu */}
         {isOpen && (
@@ -169,22 +161,22 @@ const Header: React.FC<HeaderProps> = () => {
         )}
 
         {/* Desktop Navigation */}
-        <nav className="hidden w-full py-6 lg:flex lg:items-center">
-          <div className="ml-20 mr-auto xl:ml-30">
+        <nav className="hidden w-full py-6 lg:flex lg:items-center mx-auto">
+          <div className="mr-auto ml-20 ">
             <img
               src={Logo}
               alt=""
-              className="pointer-events-none max-w-[70px] w-full"
+              className="pointer-events-none max-w-[70px] w-full rounded-full"
             />
           </div>
-          <ul className="flex mr-20 space-x-8 text-xs xl:text-base xl:mr-40">
+          <ul className="flex space-x-8 text-xs xl:text-base min-2xl:text-lg mr-20">
             {navigationLinks.map((link, index: number) => (
               <li className="" key={`nav-link-${index}`}>
                 <a
                   href={link.to}
                   onClick={(e) => handleScroll(e, link.to)}
                   className={clsx(
-                    "!text-light transition-all duration-200",
+                    "!text-light transition-all duration-300",
                     activeSection === link.to && "font-bold"
                   )}
                 >
