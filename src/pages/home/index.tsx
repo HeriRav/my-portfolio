@@ -1,4 +1,4 @@
-import Me from '../../pages/home/assets/heritiana-colorful.png';
+import Me from '../../pages/home/assets/heritiana-colorless.png';
 import cv from '../../images/download/CV Heritiana RAVELOSON.pdf';
 import LinkedInIcon from './assets/linkedinIcon';
 import GitHubIcon from './assets/githubIcon';
@@ -58,10 +58,10 @@ const Home = () => {
                 </a>
               </div>
               <div className='flex flex-col md:flex-row space-y-4 lg:mb-8 md:space-y-0'>
-                <a href="" className='btn-primary md:mr-2'>
+                <a href="" className='btn-primary w-full md:w-52  md:mr-2'>
                   {link.contact} &#8680;
                 </a>
-                <a href={cv} download={cv} className='btn-secondary md:ml-2'>
+                <a href={cv} download={cv} className='btn-secondary w-full md:w-52  md:ml-2'>
                   {link.cv} &#10515;
                 </a>
               </div>
