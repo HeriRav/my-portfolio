@@ -1,28 +1,56 @@
+import AboutIcon from './assets/about-icon.png';
+
+const linksEn = [
+  {
+    title: 'About me',
+    description_primary: 'Software developer | Passionate about Innovation and New Challenges',
+    description_secondary: (
+      <>
+        Specialized in <span className="font-semibold"> front-end </span> development with <span className="font-semibold"> back-end </span> knowledge, I design intuitive and high-performance user interfaces. My expertise in <span className="font-semibold"> React, JavaScript/TypeScript, and HTML/CSS </span> allows me to transform creative ideas into responsive web applications.
+      </>
+    ),
+    description_tertiary: 'Always on the lookout for the latest innovations, I strive to continuously improve my skills. I optimize performance and experiment with new approaches to create quality solutions that meet user needs.',
+    contact: 'Contact me',
+  }
+]
+
+// const linksFr = [
+//   {
+//     title: 'À propos de moi',
+//     description_primary: 'Développeur logiciel | Passionné par l\'innovation et les nouveaux défis',
+//     description_secondary: (
+//       <>
+//         Spécialisé dans le développement <span className="font-semibold"> front-end </span> avec des connaissances en <span className="font-semibold"> back-end </span>, je conçois des interfaces utilisateur intuitives et performantes. Mon expertise en <span className="font-semibold"> React, JavaScript/TypeScript et HTML/CSS </span> me permet de transformer des idées créatives en applications web réactives.
+//       </>
+//     ),
+//     description_tertiary: "Toujours à l'affût des dernières innovations, je cherche constamment à améliorer mes compétences. J'optimise les performances et expérimente de nouvelles approches pour créer des solutions de qualité répondant aux besoins utilisateurs.",
+//     contact: 'Contactez-moi',
+//   }
+// ]
+
 const About : React.FC = () => {
   return (
-    <section id="ABOUT" className="about-section">
-      <h2>About Me</h2>
-      <p>
-        I am a passionate developer with a love for creating dynamic and
-        engaging web applications. My journey in tech has been driven by a
-        desire to solve problems and build solutions that make a difference.
-      </p>
-      <p>
-        With experience in various technologies, I enjoy learning new skills and
-        applying them to real-world projects. My goal is to continuously grow as
-        a developer and contribute to innovative projects.
-      </p>
-      <p>
-        In my free time, I love exploring new technologies, contributing to open
-        source projects, and sharing knowledge with the community.
-      </p>
-      <p>
-        Feel free to connect with me on LinkedIn or GitHub to discuss
-        collaboration opportunities or just to chat about tech!
-      </p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae soluta laudantium amet quisquam, recusandae non laboriosam sed, tenetur blanditiis deserunt deleniti aut quis. Dignissimos et illo earum suscipit perferendis porro similique aliquam cupiditate hic nemo modi atque eos temporibus aspernatur enim sint placeat vero illum dolore, consequuntur, exercitationem voluptatem fugiat sit beatae. Ipsa, sapiente expedita sequi cumque, placeat repellat accusamus, animi at ad harum possimus commodi suscipit ratione distinctio nihil cupiditate. Commodi nihil debitis veritatis ipsam. A, sed! Ab, ea! Aspernatur incidunt corporis ea, voluptatibus neque fugiat ipsam quisquam officiis id laboriosam asperiores dicta quidem aliquam dignissimos, perferendis veniam recusandae.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, nesciunt tempora. Asperiores assumenda dignissimos libero soluta quae sapiente delectus, quam fugit sunt veritatis, sed nostrum? Id autem quas qui labore unde beatae assumenda, cupiditate dolore expedita, vel dolores nobis esse, vero earum omnis veniam distinctio blanditiis. Iste voluptates doloremque, laudantium ducimus molestiae cumque sed quod nihil assumenda impedit similique, temporibus, facilis voluptatibus? Ex cum ea illum accusamus ut rem quaerat blanditiis qui enim! Maxime reprehenderit praesentium rem commodi odit facere veritatis optio mollitia aliquid ullam aperiam magni, dicta exercitationem, deleniti, ab officia velit. Atque omnis sapiente aliquam amet quisquam vitae et repellat dolorum rerum velit dignissimos molestias corrupti enim, repellendus architecto autem id fugiat nisi. Aut quis exercitationem autem possimus iste illo molestiae voluptatibus modi dignissimos eveniet molestias sed reprehenderit iusto, error reiciendis soluta dicta ullam provident rem earum corporis? Maxime dolor, soluta alias eum minima unde dolore laborum illum ex voluptates possimus recusandae, veritatis ipsa enim fuga nisi sapiente tenetur? Dicta iure dolores eveniet quasi sapiente ut accusamus natus velit et reiciendis maiores ad ipsam explicabo ullam quisquam fugit praesentium, voluptas ex consequuntur placeat minima officiis ipsum ducimus expedita! Cupiditate aspernatur voluptates omnis ab assumenda animi optio maiores fugiat voluptas sit ad nesciunt reiciendis adipisci eius, consequuntur at vitae quod modi. Magni impedit placeat ea repellat sunt sed tenetur. Id aspernatur, laborum natus amet vitae rerum beatae obcaecati eaque, eius unde, exercitationem consectetur possimus dolores numquam accusamus suscipit placeat quidem. Voluptas iusto illum quod reiciendis sed nam nisi nihil eligendi est fugit ducimus ipsam, numquam quia, sit sapiente itaque ad autem voluptatum. Natus ut quibusdam vel praesentium? Aperiam magni animi alias cumque, sequi quaerat quo minus voluptatum consequuntur eum cum incidunt accusamus quod corporis beatae vero nam doloremque voluptatem. Voluptatum saepe aperiam sunt non! Consequuntur, sed? Est, sed ratione, nemo recusandae, in magni sunt quaerat error aliquam ipsam voluptas illo maxime. Nihil dignissimos dicta, blanditiis excepturi doloribus nemo eius a harum impedit ratione odio facilis architecto. Accusantium eum, explicabo ipsum error dolorem suscipit minima vero debitis. Hic, molestiae nemo vel ipsam ratione provident beatae id temporibus tenetur quibusdam doloribus repellendus repudiandae culpa totam perferendis enim consequuntur dolor repellat. Dolores sequi rem molestias eveniet tempore ducimus inventore sint eligendi, sapiente adipisci libero dolor, unde laborum accusantium similique distinctio modi ab! Aperiam reprehenderit, earum dolore aut sed voluptatibus numquam dolor corporis tenetur similique laudantium sint natus harum iure quidem alias veritatis eaque mollitia eius! Aliquid aut dolorem eum culpa numquam ratione odio quia deleniti facilis ut beatae ullam molestias illum laudantium suscipit ex ipsam optio, ipsum dicta. Sapiente quidem odit a aut provident facere eum perferendis id asperiores. Est quaerat quae voluptates tempora quas! Tempora quasi error voluptates illum quaerat iusto. Amet asperiores ea at quis commodi, totam consectetur ad harum. Delectus cumque quos nam natus sunt quam cupiditate distinctio obcaecati eligendi saepe consectetur maiores tempore voluptas ipsa unde, consequuntur corrupti placeat totam aut quisquam cum molestiae? Suscipit libero aliquid adipisci enim ea quibusdam omnis ex perspiciatis laborum! In, ea voluptas.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iure rem autem, maiores minus aliquid quos doloribus laudantium qui dolore assumenda eligendi, omnis ipsa ad eum explicabo cum. Temporibus harum exercitationem aut molestiae libero culpa incidunt inventore odio eligendi. Tempora dolor rem vel magni odio voluptates, tenetur adipisci quis perferendis praesentium perspiciatis saepe cupiditate itaque dicta. Molestias, rerum veniam soluta beatae quae molestiae dolorem aperiam maxime? Culpa, nam pariatur? Sit error ullam magnam fuga laborum delectus ipsa fugit alias dolorum excepturi, illum modi eos rem, quae reiciendis sequi odio incidunt dolor eum iusto ad. Alias quibusdam sit nisi tempore ullam dicta eaque voluptates officiis maiores deleniti, numquam consequatur doloremque voluptatem expedita. Velit, nemo deserunt! Perspiciatis ipsum in rerum possimus temporibus? Ea architecto dolore animi? Aut non pariatur porro, blanditiis, ad cum similique dolorem atque tempora labore, magni quisquam eum facilis id. Eaque voluptatum rerum, laudantium quidem impedit error at officiis incidunt, tenetur veniam consequatur consequuntur aspernatur obcaecati, aut corporis! Sequi qui animi tempore dignissimos quaerat sed consectetur, adipisci eligendi veniam quia consequatur illum aspernatur perspiciatis sunt, similique quibusdam corrupti error totam commodi ex blanditiis? Tempora exercitationem voluptates magnam modi eum accusantium autem cum. Nesciunt veniam, quibusdam doloribus numquam adipisci accusamus ab iusto enim consectetur aliquam, odio eligendi temporibus animi ipsam earum, sint itaque excepturi! Expedita hic, exercitationem officia omnis ratione totam soluta, incidunt dolor laborum ducimus ab, sit dolorem aspernatur eius iste ullam? Deleniti fuga aspernatur eligendi, adipisci est quo quam. Officiis nam cum deserunt laudantium ab adipisci magnam iure asperiores, itaque suscipit quia ut. Illo doloremque quidem provident aspernatur. Iusto, at. Impedit dolorum similique quos est! Minus amet nobis quis, ratione quidem explicabo incidunt magnam sapiente enim minima tempora a. Alias cupiditate, dolores excepturi recusandae similique architecto nam quis error atque voluptatem consequuntur, incidunt eius qui exercitationem iusto ratione molestias quasi? Dolorem laudantium quia ratione iusto similique? Reiciendis commodi odit dolores, praesentium veritatis minima. Enim et, dolor tenetur totam, asperiores non beatae debitis reiciendis quos nihil quam animi praesentium ratione? Soluta ducimus odio esse nostrum eligendi natus, nihil dignissimos, illo ut cupiditate quibusdam ipsum! Voluptas quasi autem sint veniam soluta suscipit non vitae quas amet corporis deserunt sunt, aspernatur maiores nobis quia vel accusantium quis. Omnis voluptatem, numquam nesciunt iure quidem eos aliquam esse facere vel adipisci, ex libero animi quis sint excepturi, alias molestiae blanditiis id laborum ab dolorum nemo? Odit autem ad sapiente cumque, atque facilis quasi sit repellendus mollitia a, illo aperiam error, unde tempora numquam vitae laudantium sequi necessitatibus! Molestiae inventore harum laudantium accusantium, amet perferendis aspernatur ad voluptas voluptatum doloremque reprehenderit dignissimos ex aperiam laboriosam sint fugiat quidem magnam qui eum sequi. Officiis recusandae error nostrum, nam iusto voluptas minima deleniti suscipit sit inventore illo nesciunt doloribus hic cum laborum neque asperiores quas, eius consectetur. Distinctio quis consequatur rerum inventore repellat iure asperiores quod placeat natus? Amet quas inventore temporibus enim quis ex iste nesciunt tempore, soluta rerum fugit, at beatae nulla sequi nihil dignissimos. Ratione incidunt aut aliquid quos aperiam quidem sit blanditiis!</p>
+    <section id="ABOUT" className="flex flex-col items-center bg-light-grey py-4">
+      {linksEn.map((link, index) => (
+        <div key={index} className="flex flex-col lg:flex-col w-full items-center max-w-[calc(100%-40px)] sm:max-w-[calc(100%-120px)] mb-8">
+          <h2 className="text-4xl text-center font-bold border-4 p-4 mb-6">
+            {link.title}
+          </h2>
+          <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-8">
+            <img src={AboutIcon} alt={link.title} className="hidden lg:block w-96 h-96" />
+            <div className="flex flex-col space-y-4 max-w-xl">
+              <p className="text-lg lg:text-xl !text-primary font-semibold italic">{link.description_primary}</p>
+              <p className="text-base">{link.description_secondary}</p>
+              <p className="text-base">{link.description_tertiary}</p>
+              <div className="flex justify-center">
+                <a href="" className="btn-primary w-48 md:w-52 text-center">
+                  {link.contact} &#8680;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </section>
   );
 }

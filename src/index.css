@@ -15,10 +15,10 @@
 
 @layer components {
   .btn-primary {
-    @apply w-full md:w-52 mx-auto rounded-full hover:bg-primary hover:!text-primary-hover px-6 py-4 bg-transparent !text-primary font-semibold border-2 border-primary transition-colors duration-300;
+    @apply mx-auto rounded-lg hover:bg-primary hover:!text-primary-hover px-6 py-4 bg-transparent !text-primary font-semibold border-2 border-primary transition-colors duration-300;
   }
   .btn-secondary {
-    @apply w-full md:w-52 mx-auto rounded-full hover:bg-secondary hover:!text-secondary-hover px-6 py-4 bg-transparent !text-secondary font-semibold border-2 border-secondary transition-colors duration-300;
+    @apply mx-auto rounded-lg hover:bg-secondary hover:!text-secondary-hover px-6 py-4 bg-transparent !text-secondary font-semibold border-2 border-secondary transition-colors duration-300;
   }
   .icon{
     @apply rounded-full p-2 border-2 border-secondary hover:bg-secondary-hover hover:border-secondary-hover transition-colors duration-300

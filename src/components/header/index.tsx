@@ -176,7 +176,7 @@ const Header: React.FC<HeaderProps> = () => {
                   href={link.to}
                   onClick={(e) => handleScroll(e, link.to)}
                   className={clsx(
-                    "!text-light transition-all duration-300",
+                    "!text-light hover:!underline hover:!underline-offset-6 hover:!decoration-2 transition-all duration-300",
                     activeSection === link.to && "font-bold"
                   )}
                 >
