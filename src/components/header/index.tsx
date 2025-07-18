@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { navigationLinks } from "./data";
+import { navigationLinksEn } from "./data";
 import clsx from "clsx";
 import Logo from "../../components/header/assets/logo-bg-white.png"
 
@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = () => {
   }, []);
 
   useEffect(() => {
-    const sectionIds = navigationLinks.map((link) => link.to);
+    const sectionIds = navigationLinksEn.map((link) => link.to);
 
     const handleScrollSpy = () => {
       const offset = 100;
@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="container fixed flex items-center max-w-full">
+      <div className="section-container fixed flex items-center max-w-full">
         {/* Hamburger button */}
         <div className="lg:hidden bg-primary/95 px-8 py-4 flex items-center justify-between w-full">
           <img
@@ -134,7 +134,7 @@ const Header: React.FC<HeaderProps> = () => {
 
               {/* Navigation Links */}
               <ul className="flex flex-col items-center justify-center space-y-4">
-                {navigationLinks.map((link, index: number) => (
+                {navigationLinksEn.map((link, index: number) => (
                   <li className="block py-2 text-black" key={`link-${index}`}>
                     <a
                       href={link.to}
@@ -170,7 +170,7 @@ const Header: React.FC<HeaderProps> = () => {
             />
           </div>
           <ul className="flex space-x-8 text-xs xl:text-base min-2xl:text-lg mr-20">
-            {navigationLinks.map((link, index: number) => (
+            {navigationLinksEn.map((link, index: number) => (
               <li className="" key={`nav-link-${index}`}>
                 <a
                   href={link.to}

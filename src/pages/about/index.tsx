@@ -32,8 +32,8 @@ const About : React.FC = () => {
   return (
     <section id="ABOUT" className="flex flex-col items-center bg-light-grey py-4">
       {linksEn.map((link, index) => (
-        <div key={index} className="flex flex-col lg:flex-col w-full items-center max-w-[calc(100%-40px)] sm:max-w-[calc(100%-120px)] mb-8">
-          <h2 className="text-4xl text-center font-bold border-4 p-4 mb-6">
+        <div key={index} className="section-container">
+          <h2 className="title">
             {link.title}
           </h2>
           <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-8">

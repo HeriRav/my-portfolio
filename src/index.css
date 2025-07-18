@@ -23,6 +23,12 @@
   .icon{
     @apply rounded-full p-2 border-2 border-secondary hover:bg-secondary-hover hover:border-secondary-hover transition-colors duration-300
   }
+  .title {
+    @apply text-4xl text-center font-bold border-4 p-4 mb-6;
+  }
+  .section-container {
+    @apply flex flex-col lg:flex-col w-full items-center max-w-[calc(100%-40px)] sm:max-w-[calc(100%-120px)] mb-8
+  }
 }
 
 * {
