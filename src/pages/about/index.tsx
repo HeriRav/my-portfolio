@@ -36,7 +36,7 @@ const About : React.FC = () => {
           <h2 className="text-4xl text-center font-bold border-4 p-4 mb-6">
             {link.title}
           </h2>
-          <div className="flex flex-col lg:flex-row items-center w-full gap-8">
+          <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-8">
             <img src={AboutIcon} alt={link.title} className="hidden lg:block w-96 h-96" />
             <div className="flex flex-col space-y-4 max-w-xl">
               <p className="text-lg lg:text-xl !text-primary font-semibold italic">{link.description_primary}</p>
