@@ -78,6 +78,57 @@ const worksEn = [
   },
 ]
 
+// const worksFr = [
+//   {
+//     name: 'Eto.mg',
+//     description: 'Site web complet pour faciliter les transactions immobilières à Madagascar.',
+//     img: Eto,
+//     job: 'Stage',
+//     technologies: ['WordPress', 'PHP'],
+//     icon: <WordpressIcon />,
+//   },
+//   {
+//     name: 'TCA (Titre Circulaire Aéroportuaire)',
+//     description: 'Application web pour la demande de Titre Circulaire Aéroportuaire permanent.',
+//     img: Tca,
+//     job: 'Soutenance de mémoire de Licence',
+//     technologies: ['C#', '.NET', 'Visual Studio'],
+//     icon: <CPlusPlusIcon />,
+//   },
+//   {
+//     name: 'Samysamy',
+//     description: 'Plateforme de mise en relation entre freelances et entreprises.',
+//     img: Samysamy,
+//     job: 'Projet d\'examen',
+//     technologies: ['C#', 'WPF', 'Visual Studio'],
+//     icon: <CPlusPlusIcon />,
+//   },
+//   {
+//     name: 'Mihary\'ket',
+//     description: 'Plateforme de vente en ligne de produits artisanaux malgaches.',
+//     img: Miharyket,
+//     job: 'Soutenance de mémoire de Master',
+//     technologies: ['React', 'JavaScript', 'Vite', 'Bootstrap'],
+//     icon: <ReactIcon />,
+//   },
+//   {
+//     name: 'Zeno Landing Page',
+//     description: 'Page d\'atterrissage pour la vente en ligne de produits artisanaux malgaches.',
+//     img: Zeno,
+//     job: 'Mission en CDI',
+//     technologies: ['Gatsby', 'Typescript', 'Tailwind CSS', 'EmailJs'],
+//     icon: <GatsbyIcon />,
+//   },
+//   {
+//     name: 'Blender - Donut',
+//     description: 'Modélisation 3D d\'un donut avec Blender utilisant le moteur de rendu Cycles.',
+//     img: Blender,
+//     job: 'Mission en CDI',
+//     technologies: ['Blender', 'Cycles'],
+//     icon: <BlenderIcon />,
+//   },
+// ]
+
 type Work = typeof worksEn[number];
 
 const Works = () => {
