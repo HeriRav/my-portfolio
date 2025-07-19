@@ -14,7 +14,7 @@ import BlenderIcon from "./assets/blenderIcon";
 const linksEn = [
   {
     title: 'My Works',
-    description_primary: 'Showcasing my projects and contributions',
+    description: 'Showcasing my projects and contributions',
     button_label: 'View details',
   },
 ]
@@ -22,7 +22,7 @@ const linksEn = [
 // const linksFr = [
 //   {
 //     title: 'Mes Projets',
-//     description_primary: 'Présentation de mes projets et contributions',
+//     description: 'Présentation de mes projets et contributions',
 //     button_label: 'Voir les détails',
 //   },
 // ]
@@ -164,6 +164,9 @@ const Works = () => {
           <h2 className="title">
             {link.title}
           </h2>
+          <p className="text-center text-3xl mb-6 !text-dark-grey">
+            {link.description}
+          </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-center">
             {worksEn.map((work, idx) => (
               <div 
