@@ -30,7 +30,7 @@ const linksEn = [
 
 const About : React.FC = () => {
   return (
-    <section id="ABOUT" className="flex flex-col items-center bg-light-grey py-4">
+    <section id="ABOUT" className="flex flex-col items-center py-4">
       {linksEn.map((link, index) => (
         <div key={index} className="section-container">
           <h2 className="title">
