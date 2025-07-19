@@ -11,7 +11,7 @@ const linksEn = [
     linkedin: 'https://www.linkedin.com/in/heritiana-raveloson-564347236/',
     github: 'https://github.com/HeriRav',
     contact: 'Contact me',
-    resume: 'Resume here',
+    resume: 'Download CV',
   }
 ]
 
@@ -23,7 +23,7 @@ const linksEn = [
 //     linkedin: 'https://www.linkedin.com/in/heritiana-raveloson-564347236/',
 //     github: 'https://github.com/HeriRav',
 //     contact: 'Contactez-moi',
-//     resume: 'CV ici',
+//     resume: 'Télécharger le CV',
 //   }
 // ]
 
@@ -67,9 +67,6 @@ const Home = () => {
               </div>
             </div>
           ))}
-          {/* <div className="mt-22 mb-4 w-62 h-62 lg:w-[458px] lg:h-[458px] md:mx-auto lg:mt-auto lg:ml-0 min-2xl:ml-0 rounded-full border-4 border-primary inset-shadow-sm inset-shadow-primary shadow-md shadow-primary">
-            <img src={Me} alt="My profile" className='mx-auto w-60 h-60 lg:w-[450px] lg:h-[450px] object-contain rounded-full opacity-75 hover:opacity-100 hover:scale-105 transition-all duration-300' />
-          </div> */}
           <div className="mt-22 mb-4 w-62 h-62 lg:w-[458px] lg:h-[458px] mx-auto lg:mt-auto lg:ml-0 min-2xl:ml-0 border-4 border-primary shadow-md shadow-primary rounded-full lg:rounded-tl-[240px] lg:rounded-br-[100px] lg:rounded-tr-[40px] lg:rounded-bl-[60px] overflow-hidden relative transition-all duration-300">
             <img src={Me} alt="My profile" className="mx-auto w-60 h-60 lg:w-[450px] lg:h-[450px] object-contain opacity-75 hover:opacity-100 hover:scale-105 transition-all duration-300" />
           </div>
