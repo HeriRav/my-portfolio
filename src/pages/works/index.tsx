@@ -30,7 +30,7 @@ const linksEn = [
 const worksEn = [
   {
     name: 'Eto.mg',
-    description: 'Comprehensive real estate website designed to facilitate transactions in Madagascar.',
+    description: 'Comprehensive real estate website designed to facilitate transactions.',
     img: Eto,
     job: 'Internship',
     technologies: ['WordPress', 'PHP'],
@@ -41,7 +41,7 @@ const worksEn = [
     description: 'Web application for requesting a permanent Airport Circular Title.',
     img: Tca,
     job: 'Thesis Defense for Bachelor\'s Degree',
-    technologies: ['C#', '.NET', 'Visual Studio'],
+    technologies: ['C#', '.NET', 'Visual Studio', 'SQL Server'],
     icon: <CPlusPlusIcon />,
   },
   {
@@ -54,23 +54,23 @@ const worksEn = [
   },
   {
     name: 'Mihary\'ket',
-    description: 'Online sales platform for Malagasy handicraft products.',
+    description: 'Online sales platform for handicraft products.',
     img: Miharyket,
     job: 'Thesis Defense for Master\'s Degree',
-    technologies: ['React', 'JavaScript', 'Vite', 'Bootstrap'],
+    technologies: ['React', 'Vite', 'Bootstrap', 'Spring Boot', 'Stripe'],
     icon: <ReactIcon />,
   },
   {
     name: 'Zeno Landing Page',
-    description: 'Online sales platform for Malagasy handicraft products.',
+    description: 'Showcase site',
     img: Zeno,
     job: 'Permanent Contract Mission',
-    technologies: ['Gatsby', 'Typescript', 'Tailwind CSS', 'EmailJs'],
+    technologies: ['Gatsby', 'Typescript', 'Tailwind CSS', 'Express.js', 'MongoDB', 'Atlas', 'EmailJs'],
     icon: <GatsbyIcon />,
   },
   {
     name: 'Blender - Donut',
-    description: '3D donut modeling project using Blender with Cycles Render Engine.',
+    description: '3D donut modeling project using Blender with Cycles render engine.',
     img: Blender,
     job: 'Permanent Contract Mission',
     technologies: ['Blender', 'Cycles'],
@@ -186,11 +186,6 @@ const Works = () => {
                   <div className="font-semibold italic text-primary text-xl">{work.name}</div>
                   <span className="ml-auto">{work.icon}</span>
                 </div>
-                <div className="flex flex-wrap px-6 py-4">
-                  <span className="bg-secondary rounded-full px-3 py-2 text-sm font-semibold !text-secondary-hover text-center">
-                    {work.technologies.join(' | ')}
-                  </span>
-                </div>
               </div>
             ))}
           </div>
@@ -217,7 +212,7 @@ const Works = () => {
             <p className="px-6 py-4 !text-dark-grey text-base">{selectedWork.description}</p>
             <div className="flex flex-wrap px-6 py-4">
               <span className="bg-secondary rounded-full px-3 py-2 text-sm font-semibold !text-secondary-hover text-center">
-                {selectedWork.technologies.join(', ')}
+                {selectedWork.technologies.join(' | ')}
               </span>
             </div>
           </div>
