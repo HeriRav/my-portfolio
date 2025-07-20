@@ -158,7 +158,7 @@ const Resume = () => {
           <Timeline items={professionalEn} />
 
           {/* Titre diplômes */}
-          <h2 className="title !text-white text-center mt-20 mb-8">My Diplomas</h2>
+          <h2 className="title !text-white mt-20">My Diplomas</h2>
 
           {/* Timeline diplômes */}
           <Timeline items={academicEn} isAcademic />
