@@ -1,12 +1,15 @@
 import type { JSX } from "react";
 import ReactIcon from "./assets/reactIcon";
+import ViteIcon from "./assets/viteIcon";
 import GatsbyIcon from "./assets/gatsbyIcon";
 import TypescriptIcon from "./assets/typescriptIcon";
+import TailwindIcon from "./assets/tailwindIcon";
 import JavaIcon from "./assets/javaIcon";
 import SpringIcon from "./assets/springIcon";
 import NodeIcon from "./assets/nodeIcon";
 import ExpressIcon from "./assets/expressIcon";
 import MySqlIcon from "./assets/mySqlIcon";
+import SqlServerIcon from "./assets/sqlServerIcon";
 import PostgresIcon from "./assets/postgresIcon";
 import MongoDbIcon from "./assets/mongoDbIcon";
 import DockerIcon from "./assets/dockerIcon";
@@ -14,6 +17,7 @@ import GitlabIcon from "./assets/gitlabIcon";
 import VisualStudioIcon from "./assets/visualStudioIcon";
 import VsCodeIcon from "./assets/vsCodeIcon";
 import IntellijIcon from "./assets/intellijIcon";
+import GitHubIcon from "./assets/gitHubIcon";
 
 const linksEn = [
   {
@@ -29,14 +33,35 @@ const linksEn = [
 //   },
 // ];
 
+const Tooltip = ({ title, children }: { title: React.ReactNode; children: React.ReactNode }) => (
+  <div className="relative group flex flex-col items-center min-w-[56px] max-w-[72px]">
+    <div className="skill-icon cursor-help">{children}</div>
+    <div className="absolute z-50 bottom-full px-2 py-1 rounded bg-dark-grey text-light-grey text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal lg:whitespace-nowrap pointer-events-none">
+      {title}
+    </div>
+  </div>
+);
+
 const skillsEn = [
   {
     title: 'Frontend',
     tech: (
       <>
-        <span title="React" className="skill-icon"><ReactIcon /></span>
-        <span title="Gatsby" className="skill-icon"><GatsbyIcon /></span>
-        <span title="TypeScript" className="skill-icon"><TypescriptIcon /></span>
+        <Tooltip title={<>Frontend<br />Front-end JavaScript library</>}>
+          <ReactIcon />
+        </Tooltip>
+        <Tooltip title={<>Vite<br />Development server</>}>
+          <ViteIcon />
+        </Tooltip>
+        <Tooltip title={<>Gatsby<br />React-based open source framework</>}>
+          <GatsbyIcon />
+        </Tooltip>
+        <Tooltip title={<>Typescript<br />A strongly typed programming language that builds on JavaScript</>}>
+          <TypescriptIcon />
+        </Tooltip>
+        <Tooltip title={<>Taiwind CSS<br />Utility-first CSS framework</>}>
+          <TailwindIcon />
+        </Tooltip>
       </>
     ),
   },
@@ -44,10 +69,18 @@ const skillsEn = [
     title: 'Backend',
     tech: (
       <>
-        <span title="Java" className="skill-icon"><JavaIcon /></span>
-        <span title="Spring Boot" className="skill-icon"><SpringIcon /></span>
-        <span title="NodeJs" className="skill-icon"><NodeIcon /></span>
-        <span title="ExpressJs" className="skill-icon"><ExpressIcon /></span>
+        <Tooltip title={<>Java<br />High-level object-oriented programming language</>}>
+          <JavaIcon />
+        </Tooltip>
+        <Tooltip title={<>Spring Boot<br />Java framework / Spring Framework extension</>}>
+          <SpringIcon />
+        </Tooltip>
+        <Tooltip title={<>Node.js<br />JavaScript runtime environment</>}>
+          <NodeIcon />
+        </Tooltip>
+        <Tooltip title={<>Express.js<br />Node.js Framework</>}>
+          <ExpressIcon />
+        </Tooltip>
       </>
     ),
   },
@@ -55,9 +88,18 @@ const skillsEn = [
     title: 'Database',
     tech: (
       <>
-        <span title="MySQL" className="skill-icon"><MySqlIcon /></span>
-        <span title="PostreSQL" className="skill-icon"><PostgresIcon /></span>
-        <span title="MongoDB" className="skill-icon"><MongoDbIcon /></span>
+        <Tooltip title={<>MySQL Database Service<br />Popular open-source relational database</>}>
+          <MySqlIcon />
+        </Tooltip>
+        <Tooltip title={<>Microsoft SQL Server<br />Microsoft’s enterprise-grade SQL database</>}>
+          <SqlServerIcon />
+        </Tooltip>
+        <Tooltip title={<>PostgreSQL<br />Advanced open-source relational database</>}>
+          <PostgresIcon />
+        </Tooltip>
+        <Tooltip title={<>MongoDB<br />NoSQL database using flexible JSON-like documents</>}>
+          <MongoDbIcon />
+        </Tooltip>
       </>
     ),
   },
@@ -65,7 +107,9 @@ const skillsEn = [
     title: 'DevOps',
     tech: (
       <>
-        <span title="Docker" className="skill-icon"><DockerIcon /></span>
+        <Tooltip title={<>Docker<br />Run apps in isolated containers</>}>
+          <DockerIcon />
+        </Tooltip>
       </>
     ),
   },
@@ -73,7 +117,9 @@ const skillsEn = [
     title: 'CI/CD',
     tech: (
       <>
-        <span title="Gitlab CI" className="skill-icon"><GitlabIcon /></span>
+        <Tooltip title={<>GitLab CI<br />Continuously build, test, and deploy code changes</>}>
+          <GitlabIcon />
+        </Tooltip>
       </>
     ),
   },
@@ -81,76 +127,27 @@ const skillsEn = [
     title: 'Tools',
     tech: (
       <>
-        <span title="Visual Studio" className="skill-icon"><VisualStudioIcon /></span>
-        <span title="Visual Studio Code" className="skill-icon"><VsCodeIcon /></span>
-        <span title="Intellij" className="skill-icon"><IntellijIcon /></span>
+        <Tooltip title={<>Visual Studio<br />Microsoft’s full-featured IDE for development</>}>
+          <VisualStudioIcon />
+        </Tooltip>
+        <Tooltip title={<>Visual Studio Code<br />Fast, customizable code editor by Microsoft</>}>
+          <VsCodeIcon />
+        </Tooltip>
+        <Tooltip title={<>IntelliJ IDEA<br />JetBrains IDE for professional Java development</>}>
+          <IntellijIcon />
+        </Tooltip>
+        <Tooltip title={<>GitHub<br />Platform for hosting and collaborating on code</>}>
+          <GitHubIcon />
+        </Tooltip>
       </>
     ),
   },
 ];
 
-// const skillsFr = [
-//   {
-//     title: 'Frontend',
-//     tech: (
-//       <>
-//         <span title="React" className="skill-icon"><ReactIcon /></span>
-//         <span title="Gatsby" className="skill-icon"><GatsbyIcon /></span>
-//         <span title="TypeScript" className="skill-icon"><TypescriptIcon /></span>
-//       </>
-//     ),
-//   },
-//   {
-//     title: 'Backend',
-//     tech: (
-//       <>
-//         <span title="Java" className="skill-icon"><JavaIcon /></span>
-//         <span title="Spring Boot" className="skill-icon"><SpringIcon /></span>
-//       </>
-//     ),
-//   },
-//   {
-//     title: 'Base de données',
-//     tech: (
-//       <>
-//         <span title="MySQL" className="skill-icon"><MySqlIcon /></span>
-//         <span title="PostgreSQL" className="skill-icon"><PostgresIcon /></span>
-//         <span title="MongoDB" className="skill-icon"><MongoDbIcon /></span>
-//       </>
-//     ),
-//   },
-//   {
-//     title: 'DevOps',
-//     tech: (
-//       <>
-//         <span title="Docker" className="skill-icon"><DockerIcon /></span>
-//       </>
-//     ),
-//   },
-//   {
-//     title: 'CI/CD',
-//     tech: (
-//       <>
-//         <span title="Gitlab CI" className="skill-icon"><GitlabIcon /></span>
-//       </>
-//     ),
-//   },
-//   {
-//     title: 'Outils',
-//     tech: (
-//       <>
-//         <span title="Visual Studio" className="skill-icon"><VisualStudioIcon /></span>
-//         <span title="Visual Studio Code" className="skill-icon"><VsCodeIcon /></span>
-//         <span title="Intellij" className="skill-icon"><IntellijIcon /></span>
-//       </>
-//     ),
-//   },
-// ];
-
 const SkillCard = ({ title, tech }: { title: string; tech: JSX.Element }) => (
-  <div className="flex flex-col h-full max-w-md lg:max-w-sm rounded-lg overflow-hidden border border-light-grey shadow-lg bg-white mb-4 py-4 px-4 space-y-8 hover:scale-105 transition-all duration-300">
+  <div className="flex flex-col h-full max-w-md lg:max-w-sm rounded-lg border border-light-grey shadow-lg bg-white mb-4 py-4 px-4 space-y-8 hover:scale-105 transition-all duration-300">
     <p className="text-center text-3xl font-semibold italic !text-primary">{title}</p>
-    <p className="flex flex-row space-x-4 space-y-4 mx-auto">{tech}</p>
+    <p className="flex flex-row flex-wrap space-x-4 space-y-4 mx-auto z-0">{tech}</p>
   </div>
 );
 

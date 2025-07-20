@@ -2,9 +2,9 @@ import Layout from './components/layout'
 import Home from './pages/home/index.tsx'
 import Works from './pages/works/index.tsx'
 import Skills from './pages/skills/index.tsx'
-// import Formations from './pages/formations/index.tsx'
+import Resume from './pages/resume/index.tsx'
 import About from './pages/about/index.tsx'
-// import Contact from './pages/contact/index.tsx'
+import Contact from './pages/contact/index.tsx'
 
 function App() {
 
@@ -14,9 +14,9 @@ function App() {
         <Home />
         <Works />
         <Skills />
-        {/* <Formations /> */}
         <About />
-        {/* <Contact /> */}
+        <Resume />
+        <Contact />
       </Layout>
     </>
   )

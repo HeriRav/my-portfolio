@@ -3,7 +3,7 @@ export const navigationLinksEn = [
   { label: "Works", to: "WORKS" },
   { label: "Skills", to: "SKILLS" },
   { label: "About", to: "ABOUT" },
-  { label: "Formations", to: "FORMATIONS" },
+  { label: "Resume", to: "RESUME" },
   { label: "Contact", to: "CONTACT" },
 ];
 

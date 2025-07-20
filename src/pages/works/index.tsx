@@ -30,7 +30,7 @@ const linksEn = [
 const worksEn = [
   {
     name: 'Eto.mg',
-    description: 'Comprehensive real estate website designed to facilitate transactions in Madagascar.',
+    description: 'Comprehensive real estate website designed to facilitate transactions.',
     img: Eto,
     job: 'Internship',
     technologies: ['WordPress', 'PHP'],
@@ -41,7 +41,7 @@ const worksEn = [
     description: 'Web application for requesting a permanent Airport Circular Title.',
     img: Tca,
     job: 'Thesis Defense for Bachelor\'s Degree',
-    technologies: ['C#', '.NET', 'Visual Studio'],
+    technologies: ['C#', '.NET', 'Visual Studio', 'SQL Server'],
     icon: <CPlusPlusIcon />,
   },
   {
@@ -49,85 +49,34 @@ const worksEn = [
     description: 'Platform connecting freelancers and companies.',
     img: Samysamy,
     job: 'Exam Project',
-    technologies: ['C#', 'WPF', 'Visual Studio'],
+    technologies: ['C#', 'WPF', 'Visual Studio', 'PostgeSQL'],
     icon: <CPlusPlusIcon />,
   },
   {
     name: 'Mihary\'ket',
-    description: 'Online sales platform for Malagasy handicraft products.',
+    description: 'Online sales platform for handicraft products.',
     img: Miharyket,
     job: 'Thesis Defense for Master\'s Degree',
-    technologies: ['React', 'JavaScript', 'Vite', 'Bootstrap'],
+    technologies: ['React', 'Vite', 'Bootstrap', 'Spring Boot', 'PostreSQL', 'Stripe'],
     icon: <ReactIcon />,
   },
   {
-    name: 'Zeno Landing Page',
-    description: 'Online sales platform for Malagasy handicraft products.',
-    img: Zeno,
-    job: 'Permanent Contract Mission',
-    technologies: ['Gatsby', 'Typescript', 'Tailwind CSS', 'EmailJs'],
-    icon: <GatsbyIcon />,
-  },
-  {
     name: 'Blender - Donut',
-    description: '3D donut modeling project using Blender with Cycles Render Engine.',
+    description: '3D donut modeling project using Blender with Cycles render engine.',
     img: Blender,
-    job: 'Permanent Contract Mission',
+    job: 'Personal Project',
     technologies: ['Blender', 'Cycles'],
     icon: <BlenderIcon />,
   },
-]
-
-// const worksFr = [
-//   {
-//     name: 'Eto.mg',
-//     description: 'Site web complet pour faciliter les transactions immobilières à Madagascar.',
-//     img: Eto,
-//     job: 'Stage',
-//     technologies: ['WordPress', 'PHP'],
-//     icon: <WordpressIcon />,
-//   },
-//   {
-//     name: 'TCA (Titre Circulaire Aéroportuaire)',
-//     description: 'Application web pour la demande de Titre Circulaire Aéroportuaire permanent.',
-//     img: Tca,
-//     job: 'Soutenance de mémoire de Licence',
-//     technologies: ['C#', '.NET', 'Visual Studio'],
-//     icon: <CPlusPlusIcon />,
-//   },
-//   {
-//     name: 'Samysamy',
-//     description: 'Plateforme de mise en relation entre freelances et entreprises.',
-//     img: Samysamy,
-//     job: 'Projet d\'examen',
-//     technologies: ['C#', 'WPF', 'Visual Studio'],
-//     icon: <CPlusPlusIcon />,
-//   },
-//   {
-//     name: 'Mihary\'ket',
-//     description: 'Plateforme de vente en ligne de produits artisanaux malgaches.',
-//     img: Miharyket,
-//     job: 'Soutenance de mémoire de Master',
-//     technologies: ['React', 'JavaScript', 'Vite', 'Bootstrap'],
-//     icon: <ReactIcon />,
-//   },
-//   {
-//     name: 'Zeno Landing Page',
-//     description: 'Page d\'atterrissage pour la vente en ligne de produits artisanaux malgaches.',
-//     img: Zeno,
-//     job: 'Mission en CDI',
-//     technologies: ['Gatsby', 'Typescript', 'Tailwind CSS', 'EmailJs'],
-//     icon: <GatsbyIcon />,
-//   },
-//   {
-//     name: 'Blender - Donut',
-//     description: 'Modélisation 3D d\'un donut avec Blender utilisant le moteur de rendu Cycles.',
-//     img: Blender,
-//     job: 'Mission en CDI',
-//     technologies: ['Blender', 'Cycles'],
-//     icon: <BlenderIcon />,
-//   },
-// ]
+  {
+    name: 'Zeno Landing Page',
+    description: 'Showcase site',
+    img: Zeno,
+    job: 'Permanent Contract Mission',
+    technologies: ['Gatsby', 'Typescript', 'Tailwind CSS', 'Express.js', 'MongoDB', 'Atlas', 'EmailJs'],
+    icon: <GatsbyIcon />,
+  },
+];
 
 type Work = typeof worksEn[number];
 
@@ -186,11 +135,6 @@ const Works = () => {
                   <div className="font-semibold italic text-primary text-xl">{work.name}</div>
                   <span className="ml-auto">{work.icon}</span>
                 </div>
-                <div className="flex flex-wrap px-6 py-4">
-                  <span className="bg-secondary rounded-full px-3 py-2 text-sm font-semibold !text-secondary-hover text-center">
-                    {work.technologies.join(' | ')}
-                  </span>
-                </div>
               </div>
             ))}
           </div>
@@ -213,11 +157,11 @@ const Works = () => {
               </button>
             </div>
             <img className="w-full h-fit md:h-48 md:object-contain bg-dark-grey rounded-lg px-6 mb-4" src={selectedWork.img} alt="Work" />
-            <p className="px-6 underline !text-dark-grey text-lg font-semibold">{selectedWork.job}</p>
+            <p className="px-6 underline !text-dark-grey text-2xl font-semibold">{selectedWork.job}</p>
             <p className="px-6 py-4 !text-dark-grey text-base">{selectedWork.description}</p>
             <div className="flex flex-wrap px-6 py-4">
               <span className="bg-secondary rounded-full px-3 py-2 text-sm font-semibold !text-secondary-hover text-center">
-                {selectedWork.technologies.join(', ')}
+                {selectedWork.technologies.join(' | ')}
               </span>
             </div>
           </div>
