@@ -27,7 +27,25 @@ const linksEn = [
 //   }
 // ]
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  const offset = 80;
+  if (element) {
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+};
+
 const Home = () => {
+
+  const handleScroll = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    id: string
+  ) => {
+    event.preventDefault();
+    scrollToSection(id);
+  };
+
   return (
     <section id="HOME" className="flex justify-center bg-dark-grey">
       <div className="w-full max-w-[calc(100%-40px)] sm:max-w-[calc(100%-120px)] xl:max-w-[calc(100%-200px)]">
@@ -58,7 +76,9 @@ const Home = () => {
                 </a>
               </div>
               <div className='flex flex-col md:flex-row justify-center lg:justify-end xl:w-fit lg:ml-auto space-y-4 lg:mb-8 md:space-y-0 text-center'>
-                <a href="" className='btn-primary w-48 md:w-52 md:mr-2'>
+                <a href="#CONTACT" className='btn-primary w-48 md:w-52 md:mr-2'
+                  onClick={(e) => handleScroll(e, "CONTACT")}
+                >
                   {link.contact} &#8680;
                 </a>
                 <a href={cv} download={cv} className='btn-secondary w-48 md:w-52 md:ml-2'>

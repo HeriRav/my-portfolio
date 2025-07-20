@@ -1,5 +1,14 @@
 import AboutIcon from './assets/about-icon.png';
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  const offset = 80;
+  if (element) {
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+};
+
 const linksEn = [
   {
     title: 'About me',
@@ -12,7 +21,7 @@ const linksEn = [
     description_tertiary: 'Always on the lookout for the latest innovations, I strive to continuously improve my skills. I optimize performance and experiment with new approaches to create quality solutions that meet user needs.',
     contact: 'Contact me',
   }
-]
+];
 
 // const linksFr = [
 //   {
@@ -29,6 +38,15 @@ const linksEn = [
 // ]
 
 const About : React.FC = () => {
+
+  const handleScroll = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    id: string
+  ) => {
+    event.preventDefault();
+    scrollToSection(id);
+  };
+
   return (
     <section id="ABOUT" className="flex flex-col items-center py-4">
       {linksEn.map((link, index) => (
@@ -42,11 +60,15 @@ const About : React.FC = () => {
               <p className="text-lg lg:text-xl !text-primary font-semibold italic">{link.description_primary}</p>
               <p className="text-base">{link.description_secondary}</p>
               <p className="text-base">{link.description_tertiary}</p>
-              <div className="flex justify-center">
-                <a href="" className="btn-primary w-48 md:w-52 text-center">
-                  {link.contact} &#8680;
-                </a>
-              </div>
+              <div key={index} className="flex justify-center">
+                  <a 
+                    href="#CONTACT"
+                    className="btn-primary w-48 md:w-52 text-center"
+                    onClick={(e) => handleScroll(e, "CONTACT")}
+                    >
+                    {link.contact} &#8680;
+                  </a>
+                </div>
             </div>
           </div>
         </div>
