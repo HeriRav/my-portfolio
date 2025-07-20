@@ -4,7 +4,7 @@ import Works from './pages/works/index.tsx'
 import Skills from './pages/skills/index.tsx'
 import Resume from './pages/resume/index.tsx'
 import About from './pages/about/index.tsx'
-// import Contact from './pages/contact/index.tsx'
+import Contact from './pages/contact/index.tsx'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
         <Skills />
         <About />
         <Resume />
-        {/* <Contact /> */}
+        <Contact />
       </Layout>
     </>
   )
