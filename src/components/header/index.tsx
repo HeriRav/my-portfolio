@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { navigationLinksEn } from "./data";
 import clsx from "clsx";
-import Logo from "../../components/header/assets/logo-bg-white.png"
+import Logo from "../../components/header/assets/logo-bg-white.png";
 
 interface HeaderProps {
   siteTitle: string;
@@ -79,10 +79,10 @@ const Header: React.FC<HeaderProps> = () => {
             src={Logo}
             alt=""
             className="pointer-events-none max-w-[50px] w-full rounded-full"
-          />  
+          />
           <button
-          onClick={toggleMenu}
-          className="!text-light focus:outline-none lg:hidden"
+            onClick={toggleMenu}
+            className="!text-light focus:outline-none lg:hidden"
           >
             <svg
               className="w-6 h-6"
@@ -100,7 +100,7 @@ const Header: React.FC<HeaderProps> = () => {
             </svg>
           </button>
         </div>
-      
+
         {/* Modal for mobile menu */}
         {isOpen && (
           <div
@@ -176,7 +176,7 @@ const Header: React.FC<HeaderProps> = () => {
                   href={link.to}
                   onClick={(e) => handleScroll(e, link.to)}
                   className={clsx(
-                    "!text-light hover:!underline hover:!underline-offset-6 hover:!decoration-2 transition-all duration-300",
+                    "!text-light hover:!underline hover:!underline-offset-9 hover:!decoration-2 transition-all duration-300",
                     activeSection === link.to && "font-bold"
                   )}
                 >

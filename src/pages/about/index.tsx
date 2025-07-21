@@ -1,4 +1,4 @@
-import AboutIcon from './assets/about-icon.png';
+import AboutIcon from "./assets/about-icon.png";
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -11,16 +11,26 @@ const scrollToSection = (id: string) => {
 
 const linksEn = [
   {
-    title: 'About me',
-    description_primary: 'Software developer | Passionate about Innovation and New Challenges',
+    title: "About me",
+    description_primary:
+      "Software developer | Passionate about Innovation and New Challenges",
     description_secondary: (
       <>
-        Specialized in <span className="font-semibold"> front-end </span> development with <span className="font-semibold"> back-end </span> knowledge, I design intuitive and high-performance user interfaces. My expertise in <span className="font-semibold"> React, JavaScript/TypeScript, and HTML/CSS </span> allows me to transform creative ideas into responsive web applications.
+        Specialized in <span className="font-semibold"> front-end </span>{" "}
+        development with <span className="font-semibold"> back-end </span>{" "}
+        knowledge, I design intuitive and high-performance user interfaces. My
+        expertise in{" "}
+        <span className="font-semibold">
+          {" "}
+          React, JavaScript/TypeScript, and HTML/CSS{" "}
+        </span>{" "}
+        allows me to transform creative ideas into responsive web applications.
       </>
     ),
-    description_tertiary: 'Always on the lookout for the latest innovations, I strive to continuously improve my skills. I optimize performance and experiment with new approaches to create quality solutions that meet user needs.',
-    contact: 'Contact me',
-  }
+    description_tertiary:
+      "Always on the lookout for the latest innovations, I strive to continuously improve my skills. I optimize performance and experiment with new approaches to create quality solutions that meet user needs.",
+    contact: "Contact me",
+  },
 ];
 
 // const linksFr = [
@@ -37,8 +47,7 @@ const linksEn = [
 //   }
 // ]
 
-const About : React.FC = () => {
-
+const About: React.FC = () => {
   const handleScroll = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     id: string
@@ -51,30 +60,34 @@ const About : React.FC = () => {
     <section id="ABOUT" className="flex flex-col items-center py-4">
       {linksEn.map((link, index) => (
         <div key={index} className="section-container">
-          <h2 className="title">
-            {link.title}
-          </h2>
+          <h2 className="title">{link.title}</h2>
           <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-8">
-            <img src={AboutIcon} alt={link.title} className="hidden lg:block w-96 h-96" />
+            <img
+              src={AboutIcon}
+              alt={link.title}
+              className="hidden lg:block w-96 h-96"
+            />
             <div className="flex flex-col space-y-4 max-w-xl">
-              <p className="text-lg lg:text-xl !text-primary font-semibold italic">{link.description_primary}</p>
+              <p className="text-lg lg:text-xl !text-primary font-semibold italic">
+                {link.description_primary}
+              </p>
               <p className="text-base">{link.description_secondary}</p>
               <p className="text-base">{link.description_tertiary}</p>
               <div key={index} className="flex justify-center">
-                  <a 
-                    href="#CONTACT"
-                    className="btn-primary w-48 md:w-52 text-center"
-                    onClick={(e) => handleScroll(e, "CONTACT")}
-                    >
-                    {link.contact} &#8680;
-                  </a>
-                </div>
+                <a
+                  href="#CONTACT"
+                  className="btn-primary w-48 md:w-52 text-center"
+                  onClick={(e) => handleScroll(e, "CONTACT")}
+                >
+                  {link.contact} &#8680;
+                </a>
+              </div>
             </div>
           </div>
         </div>
       ))}
     </section>
   );
-}
+};
 
 export default About;
