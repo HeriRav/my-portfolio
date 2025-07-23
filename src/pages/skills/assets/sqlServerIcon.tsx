@@ -8,9 +8,9 @@ const SqlServerIcon: React.FC = () => {
 
         <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="-2901.952" y1="923.573" x2="-2061.249" y2="1420.331" gradientTransform="matrix(.1234 0 0 -.1234 1158.33 1550.273)">
 
-          <stop offset="0" stop-color="#909ca9"/>
+          <stop offset="0" stopColor="#909ca9"/>
 
-          <stop offset="1" stop-color="#ededee"/>
+          <stop offset="1" stopColor="#ededee"/>
 
         </linearGradient>
 
@@ -18,9 +18,9 @@ const SqlServerIcon: React.FC = () => {
 
         <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="-2882.7" y1="10288.81" x2="-2206.249" y2="10288.81" gradientTransform="matrix(.1234 0 0 -.1234 1158.33 1550.273)">
 
-          <stop offset="0" stop-color="#939fab"/>
+          <stop offset="0" stopColor="#939fab"/>
 
-          <stop offset="1" stop-color="#dcdee1"/>
+          <stop offset="1" stopColor="#dcdee1"/>
 
         </linearGradient>
 
@@ -28,9 +28,9 @@ const SqlServerIcon: React.FC = () => {
 
         <radialGradient id="c" cx="-14217.448" cy="7277.705" r="898.12" gradientTransform="matrix(-.1185 -.0178 -.036 .237 -198.955 -1314.415)" gradientUnits="userSpaceOnUse">
 
-          <stop offset="0" stop-color="#ee352c"/>
+          <stop offset="0" stopColor="#ee352c"/>
 
-          <stop offset="1" stop-color="#a91d22"/>
+          <stop offset="1" stopColor="#a91d22"/>
 
         </radialGradient>
 
