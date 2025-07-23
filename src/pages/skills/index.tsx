@@ -1,6 +1,5 @@
 import type { JSX } from "react";
 import ReactIcon from "./assets/reactIcon";
-import ViteIcon from "./assets/viteIcon";
 import GatsbyIcon from "./assets/gatsbyIcon";
 import TypescriptIcon from "./assets/typescriptIcon";
 import TailwindIcon from "./assets/tailwindIcon";
@@ -12,9 +11,7 @@ import MySqlIcon from "./assets/mySqlIcon";
 import SqlServerIcon from "./assets/sqlServerIcon";
 import PostgresIcon from "./assets/postgresIcon";
 import MongoDbIcon from "./assets/mongoDbIcon";
-import DockerIcon from "./assets/dockerIcon";
 import GitlabIcon from "./assets/gitlabIcon";
-import VisualStudioIcon from "./assets/visualStudioIcon";
 import VsCodeIcon from "./assets/vsCodeIcon";
 import IntellijIcon from "./assets/intellijIcon";
 import GitHubIcon from "./assets/gitHubIcon";
@@ -63,17 +60,6 @@ const skillsEn = [
           }
         >
           <ReactIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Vite
-              <br />
-              Development server
-            </>
-          }
-        >
-          <ViteIcon />
         </Tooltip>
         <Tooltip
           title={
@@ -256,17 +242,6 @@ const skillsEn = [
         <Tooltip
           title={
             <>
-              Visual Studio
-              <br />
-              Microsoft’s full-featured IDE for development
-            </>
-          }
-        >
-          <VisualStudioIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
               Visual Studio Code
               <br />
               Fast, customizable code editor by Microsoft
@@ -286,30 +261,19 @@ const skillsEn = [
         >
           <IntellijIcon />
         </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Docker
-              <br />
-              Run apps in isolated containers
-            </>
-          }
-        >
-          <DockerIcon />
-        </Tooltip>
       </>
     ),
   },
 ];
 
 const SkillCard = ({ title, tech }: { title: string; tech: JSX.Element }) => (
-  <div className="flex flex-col h-full max-w-md lg:max-w-sm rounded-lg border border-light-grey shadow-lg bg-white mb-4 py-4 px-4 space-y-8 hover:scale-105 transition-all duration-300">
-    <p className="text-center text-3xl font-semibold italic !text-primary">
+  <div className="flex flex-col h-full max-w-md lg:max-w-sm rounded-lg border border-light-grey shadow-lg bg-white mb-4 py-4 px-4 space-y-8 transition-all duration-300">
+    <div className="text-center text-3xl font-semibold italic !text-primary">
       {title}
-    </p>
-    <p className="flex flex-row flex-wrap space-x-4 space-y-4 mx-auto z-0">
+    </div>
+    <div className="flex flex-row flex-wrap space-x-4 space-y-4 mx-auto z-0">
       {tech}
-    </p>
+    </div>
   </div>
 );
 
@@ -317,10 +281,11 @@ const Skills = () => {
   return (
     <section
       id="SKILLS"
-      className="flex flex-col items-center py-4 bg-light-grey"
+      className="relative flex flex-col items-center py-32 overflow-hidden"
     >
+      <div className="absolute inset-0 -z-10 bg-light-grey background-skill"></div>
       {linksEn.map((link, index) => (
-        <div key={index} className="section-container">
+        <div key={index} className="relative z-10 section-container">
           <h2 className="title">{link.title}</h2>
           <p className="text-center text-3xl mb-6 !text-dark-grey">
             {link.description}
