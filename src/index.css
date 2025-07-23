@@ -2,12 +2,7 @@
 
 @theme {
   --color-primary: #8a2be2; /* Blue Violet */
-  --color-primary-opacity: rgba(
-    138,
-    43,
-    226,
-    0.95
-  ); /* Blue Violet with opacity */
+  --color-header: rgba(34, 34, 34, 0.95); /* Blue Violet with opacity */
   --color-secondary: #2be28a; /* Emerald */
   --color-primary-hover: #b98eff; /* Lavender (floral) */
   --color-secondary-hover: #1b4f08; /* Cal Poly green */
@@ -20,7 +15,7 @@
 
 @layer components {
   .btn-primary {
-    @apply mx-auto rounded-lg hover:bg-primary hover:!text-primary-hover px-6 py-4 bg-transparent !text-primary font-semibold border-2 border-primary transition-colors duration-300;
+    @apply mx-auto rounded-lg bg-primary hover:!text-light-grey px-6 py-4 hover:bg-primary-hover !text-light-grey font-semibold border-2 border-primary hover:border-primary-hover transition-colors duration-300;
   }
   .btn-secondary {
     @apply mx-auto rounded-lg hover:bg-secondary hover:!text-secondary-hover px-6 py-4 bg-transparent !text-secondary font-semibold border-2 border-secondary transition-colors duration-300;
@@ -83,7 +78,7 @@ legend {
 
 /* Navbar réduite au scroll */
 .navbar.scrolled nav {
-  background-color: var(--color-primary-opacity);
+  background-color: var(--color-header);
   padding: 16px 0 !important;
 }
 
@@ -117,10 +112,45 @@ legend {
   }
 }
 
+@keyframes popOut {
+  from {
+    scale: 1;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    scale: 0;
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-in-out;
 }
 
 .animate-popIn {
   animation: popIn 0.2s ease-in-out;
+}
+
+.animate-popOut {
+  animation: popOut 0.2s ease-in-out forwards;
+}
+
+.background-skill {
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+}
+
+/* Tablette (entre 768px et 1024px) */
+@media (max-width: 1024px) {
+  .background-skill {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+  }
+}
+
+/* Mobile (jusqu'à 767px) */
+@media (max-width: 767px) {
+  .background-skill {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+  }
 }
