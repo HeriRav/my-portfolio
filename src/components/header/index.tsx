@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { navigationLinksEn } from "./data";
 import clsx from "clsx";
-import Logo from "../../components/header/assets/logo-bg-white.png";
+import Popup from "../ui/header-popup";
 
 interface HeaderProps {
   siteTitle: string;
 }
+
+const LogoEn = [
+  {
+    name: "Heritiana R.",
+    decription: "My portfolio",
+  },
+];
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -17,9 +24,9 @@ const scrollToSection = (id: string) => {
 };
 
 const Header: React.FC<HeaderProps> = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("HOME");
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleScroll = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -27,14 +34,6 @@ const Header: React.FC<HeaderProps> = () => {
   ) => {
     event.preventDefault();
     scrollToSection(id);
-  };
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -74,101 +73,51 @@ const Header: React.FC<HeaderProps> = () => {
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="section-container fixed flex items-center max-w-full">
         {/* Hamburger button */}
-        <div className="lg:hidden bg-primary/95 px-8 py-4 flex items-center justify-between w-full">
-          <img
-            src={Logo}
-            alt=""
-            className="pointer-events-none max-w-[50px] w-full rounded-full"
-          />
-          <button
-            onClick={toggleMenu}
-            className="!text-light focus:outline-none lg:hidden"
+        {LogoEn.map((logo, index) => (
+          <div
+            key={index}
+            className="lg:hidden bg-primary/95 px-8 py-4 flex items-center justify-between w-full cursor-default"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <h1 className="!text-transparent text-xl italic font-black bg-clip-text bg-gradient-to-r from-light to-primary-hover">
+              {logo.name}
+            </h1>
+            <button
+              onClick={() => setShowPopup(true)}
+              className="!text-light focus:outline-none lg:hidden"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d={!isOpen ? "M4 6h16M4 12h16m-7 6h7" : "M6 18L18 6M6 6l12 12"}
-              />
-            </svg>
-          </button>
-        </div>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+        ))}
 
         {/* Modal for mobile menu */}
-        {isOpen && (
-          <div
-            className="animate-popIn fixed inset-0 bg-black/70 bg-opacity-80"
-            onClick={closeMenu}
-          >
-            <div
-              className="relative w-screen h-screen p-5 bg-primary min-h-screen flex items-center justify-center shadow-lg"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close button */}
-              <button
-                onClick={closeMenu}
-                className="absolute text-black top-7 right-12"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="white"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-
-              {/* Navigation Links */}
-              <ul className="flex flex-col items-center justify-center space-y-4">
-                {navigationLinksEn.map((link, index: number) => (
-                  <li className="block py-2 text-black" key={`link-${index}`}>
-                    <a
-                      href={link.to}
-                      onClick={closeMenu}
-                      onClickCapture={(e) => handleScroll(e, link.to)}
-                      className={clsx(
-                        "!text-light transition-all duration-200",
-                        activeSection === link.to && "font-bold"
-                      )}
-                    >
-                      {link.label}
-                    </a>
-                    <hr
-                      className={clsx(
-                        "h-1 bg-light rounded-sm",
-                        activeSection === link.to ? "block" : "hidden"
-                      )}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
+        {showPopup && <Popup onClose={() => setShowPopup(false)} />}
 
         {/* Desktop Navigation */}
         <nav className="hidden w-full py-6 lg:flex lg:items-center mx-auto">
-          <div className="mr-auto ml-20 ">
-            <img
-              src={Logo}
-              alt=""
-              className="pointer-events-none max-w-[70px] w-full rounded-full"
-            />
-          </div>
+          {LogoEn.map((logo, index) => (
+            <div key={index} className="mr-auto ml-20 cursor-default">
+              <h1 className="!text-transparent text-3xl italic font-black bg-clip-text bg-gradient-to-r from-primary to-primary-hover">
+                {logo.name}
+              </h1>
+              <p className="!text-transparent text-xl font-bold bg-clip-text bg-gradient-to-r from-secondary to-secondary-hover">
+                {logo.decription}
+              </p>
+            </div>
+          ))}
           <ul className="flex space-x-8 text-xs xl:text-base min-2xl:text-lg mr-20">
             {navigationLinksEn.map((link, index: number) => (
               <li className="" key={`nav-link-${index}`}>
