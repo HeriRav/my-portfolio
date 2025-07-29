@@ -48,7 +48,7 @@ const worksEn = [
   },
   {
     name: "Samysamy",
-    description: "Platform connecting freelancers and companies.",
+    description: "Desktop application : Platform connecting freelancers and companies.",
     img: Samysamy,
     job: "Exam Project",
     technologies: ["C#", "WPF", "Visual Studio", "PostgeSQL"],
@@ -162,9 +162,10 @@ const Works = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-row items-start mb-6">
-              <h2 className="text-4xl !text-transparent font-bold italic bg-gradient-to-r from-primary via-primary-hover to-secondary bg-clip-text leading-tight">
-                {selectedWork.name}
-              </h2>
+              <div className="flex flex-row items-center">
+                <h2 className="text-4xl !text-transparent font-bold italic bg-gradient-to-r from-primary via-primary-hover to-secondary bg-clip-text leading-tight">{selectedWork.name}</h2>
+                <p className="px-2">{selectedWork.icon}</p>
+              </div>
               <button
                 onClick={closeModal}
                 className="ml-auto -mt-2 -mr-2 p-3 rounded-full bg-gray-50 hover:bg-red-50 text-gray-500 hover:text-red-500 transition-all duration-300 transform hover:scale-100 hover:rotate-90 group"

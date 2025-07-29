@@ -24,7 +24,7 @@ const linksEn = [
 //     linkedin: 'https://www.linkedin.com/in/heritiana-raveloson-564347236/',
 //     github: 'https://github.com/HeriRav',
 //     contact: 'Contactez-moi',
-//     resume: 'Télécharger le CV',
+//     resume: 'Télécharger CV',
 //   }
 // ]
 
@@ -52,7 +52,7 @@ const Home = () => {
       className="flex justify-center bg-dark-grey relative overflow-hidden"
     >
       <ParticleBackground />
-      <div className=" relative z-10 w-full max-w-[calc(100%-40px)] sm:max-w-[calc(100%-120px)] xl:max-w-[calc(100%-200px)]">
+      <div className="relative z-10 w-full max-w-[calc(100%-40px)] sm:max-w-[calc(100%-120px)] xl:max-w-[calc(100%-200px)]">
         <div className="flex flex-col-reverse lg:flex-row">
           {linksEn.map((link, index) => (
             <div
@@ -70,7 +70,7 @@ const Home = () => {
               <div className="text-xl font-semibold">
                 <p className="!text-light-grey">{link.title}</p>
               </div>
-              <div className="flex items-center justify-center lg:justify-end lg:ml-auto space-x-8 mb-6">
+              <div className="flex items-center justify-center lg:justify-end lg:ml-auto space-x-4 py-1">
                 <a
                   href={link.linkedin}
                   target="_blank"
@@ -94,7 +94,7 @@ const Home = () => {
                   className="btn-primary w-48 md:w-52 md:mr-2"
                   onClick={(e) => handleScroll(e, "CONTACT")}
                 >
-                  {link.contact} &#8680;
+                  {link.contact} &#129146;
                 </a>
                 <a
                   href={cv}
@@ -106,7 +106,7 @@ const Home = () => {
               </div>
             </div>
           ))}
-          <div className="mt-22 mb-4 w-62 h-62 lg:w-[458px] lg:h-[458px] mx-auto lg:mt-auto lg:ml-0 min-2xl:ml-0 border-4 border-primary shadow-md shadow-primary rounded-full lg:rounded-tl-[240px] lg:rounded-br-[100px] lg:rounded-tr-[40px] lg:rounded-bl-[60px] overflow-hidden relative transition-all duration-300">
+          <div className="mt-22 mb-4 w-62 h-62 lg:w-[458px] lg:h-[458px] mx-auto lg:mt-auto lg:ml-0 min-2xl:ml-0 border-4 border-primary shadow-md shadow-primary rounded-full lg:rounded-tl-[240px] lg:rounded-br-[240px] lg:rounded-tr-[60px] lg:rounded-bl-[60px] overflow-hidden relative transition-all duration-300">
             <img
               src={Me}
               alt="My profile"

@@ -22,7 +22,7 @@ const linksEn = [
         expertise in{" "}
         <span className="font-semibold">
           {" "}
-          React, JavaScript/TypeScript, and HTML/CSS{" "}
+          JavaScript/TypeScript, and HTML/CSS{" "}
         </span>{" "}
         allows me to transform creative ideas into responsive web applications.
       </>
@@ -39,7 +39,7 @@ const linksEn = [
 //     description_primary: 'Développeur logiciel | Passionné par l\'innovation et les nouveaux défis',
 //     description_secondary: (
 //       <>
-//         Spécialisé dans le développement <span className="font-semibold"> front-end </span> avec des connaissances en <span className="font-semibold"> back-end </span>, je conçois des interfaces utilisateur intuitives et performantes. Mon expertise en <span className="font-semibold"> React, JavaScript/TypeScript et HTML/CSS </span> me permet de transformer des idées créatives en applications web réactives.
+//         Spécialisé dans le développement <span className="font-semibold"> front-end </span> avec des connaissances en <span className="font-semibold"> back-end </span>, je conçois des interfaces utilisateur intuitives et performantes. Mon expertise en <span className="font-semibold"> JavaScript/TypeScript et HTML/CSS </span> me permet de transformer des idées créatives en applications web réactives.
 //       </>
 //     ),
 //     description_tertiary: "Toujours à l'affût des dernières innovations, je cherche constamment à améliorer mes compétences. J'optimise les performances et expérimente de nouvelles approches pour créer des solutions de qualité répondant aux besoins utilisateurs.",
@@ -57,7 +57,7 @@ const About: React.FC = () => {
   };
 
   return (
-    <section id="ABOUT" className="flex flex-col items-center py-4">
+    <section id="ABOUT" className="flex flex-col items-center pb-4">
       {linksEn.map((link, index) => (
         <div key={index} className="section-container">
           <h2 className="title">{link.title}</h2>
@@ -73,13 +73,13 @@ const About: React.FC = () => {
               </p>
               <p className="text-base">{link.description_secondary}</p>
               <p className="text-base">{link.description_tertiary}</p>
-              <div key={index} className="flex justify-center">
+              <div key={index} className="py-4">
                 <a
                   href="#CONTACT"
                   className="btn-primary w-48 md:w-52 text-center"
                   onClick={(e) => handleScroll(e, "CONTACT")}
                 >
-                  {link.contact} &#8680;
+                  {link.contact} &#129146;
                 </a>
               </div>
             </div>

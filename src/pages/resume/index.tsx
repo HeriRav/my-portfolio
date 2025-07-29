@@ -109,7 +109,7 @@ const Timeline = ({
             <div
               className={`lg:w-1/2 px-4 ${
                 isLeft
-                  ? "lg:pr-12 text-left lg:text-right"
+                  ? "lg:pr-12 text-left"
                   : "lg:pl-12 text-left"
               }`}
             >
@@ -161,7 +161,7 @@ const Resume = () => {
   return (
     <section
       id="RESUME"
-      className="relative flex flex-col items-center py-12 bg-dark-grey"
+      className="relative flex flex-col items-center py-4 bg-dark-grey"
     >
       {linksEn.map((link, index) => (
         <div key={index} className="section-container">
