@@ -5,6 +5,7 @@ import Skills from "./pages/skills/index.tsx";
 import Resume from "./pages/resume/index.tsx";
 import About from "./pages/about/index.tsx";
 import Contact from "./pages/contact/index.tsx";
+import ScrollToTopButton from "./components/ui/scrollToTop-button.tsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <About />
         <Resume />
         <Contact />
+        <ScrollToTopButton />
       </Layout>
     </>
   );
