@@ -20,6 +20,9 @@
   .btn-secondary {
     @apply mx-auto rounded-lg hover:bg-secondary hover:!text-secondary-hover px-6 py-4 bg-transparent !text-secondary font-semibold border-2 border-secondary transition-colors duration-300;
   }
+  .btn-loading {
+    @apply mx-auto rounded-lg cursor-not-allowed bg-light-grey hover:!text-dark-grey px-6 py-4 hover:bg-light-grey !text-dark-grey font-semibold border-2 border-light-grey hover:border-light-grey transition-colors duration-300;
+  }
   .icon {
     @apply rounded-full p-2 border-2 border-secondary hover:bg-secondary-hover hover:border-secondary-hover transition-colors duration-300;
   }
@@ -31,6 +34,9 @@
   }
   .skill-icon {
     @apply flex items-center justify-center hover:scale-125 transition-transform duration-300;
+  }
+  .contact-input {
+    @apply px-4 py-3 rounded-lg border-1 border-light-grey;
   }
 }
 
