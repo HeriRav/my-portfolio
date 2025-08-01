@@ -1,3 +1,6 @@
+import { useState, type FormEvent } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 import ContactIcon from "./assets/contact-icon.png";
 import LocalisationIcon from "./assets/localisationIcon";
 import EmailIcon from "./assets/emailIcon";
@@ -12,6 +15,7 @@ const linksEn = [
     email: "E-mail",
     message: "Message",
     button: "Send",
+    loading: "Sending...",
   },
 ];
 
@@ -34,6 +38,99 @@ const contactEn = [
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    tel: "",
+    email: "",
+    message: "",
+  });
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const serviceId = "service_x2rdhcv";
+    const templateId = "template_wrbvlbn";
+    const publicKey = "zVJo-S3WOEH4qUyoB";
+
+    if (
+      !formData.name ||
+      !formData.tel ||
+      !formData.email ||
+      !formData.message
+    ) {
+      console.error("All fields are required");
+      toast.warn("All fields are required", { position: "top-center" });
+      setLoading(false);
+      return;
+    }
+
+    if (!emailRegex.test(formData.email)) {
+      console.error("Invalid email format");
+      toast.warn("Invalid email format", { position: "top-center" });
+      setLoading(false);
+      return;
+    }
+
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_tel: formData.tel,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        publicKey
+      )
+      .then((response) => {
+        console.log("Email sent successfully", response);
+        notify_success();
+        setFormData({ name: "", tel: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("Error sending email", error);
+        notify_failure();
+        setFormData({ name: "", tel: "", email: "", message: "" });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  const notify_success = () => {
+    toast.success("Message sent successfully!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
+  const notify_failure = () => {
+    toast.error("Error sending message. Please try again.", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
   return (
     <>
       <section id="CONTACT" className="flex flex-col items-center py-4">
@@ -62,38 +159,62 @@ const Contact = () => {
                 alt={link.title}
                 className="block w-full h-full md:w-96 md:h-96"
               />
-              <form className="flex flex-col space-y-4 border-light-grey max-w-xl w-full border-1 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <form
+                className="flex flex-col space-y-4 border-light-grey max-w-xl w-full border-1 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                onSubmit={handleSubmit}
+              >
                 <input
+                  id="name"
                   type="text"
+                  name="name"
+                  value={formData.name}
                   placeholder={link.name}
-                  className="px-4 py-3 rounded-lg border-1 border-light-grey"
+                  className="contact-input"
+                  onChange={handleChange}
                 />
                 <input
-                  type="text"
+                  id="tel"
+                  type="tel"
+                  name="tel"
+                  value={formData.tel}
                   placeholder={link.phone}
-                  className="px-4 py-3 rounded-lg border-1 border-light-grey"
+                  className="contact-input"
+                  onChange={handleChange}
                 />
                 <input
-                  type="text"
+                  id="email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   placeholder={link.email}
-                  className="px-4 py-3 rounded-lg border-1 border-light-grey"
+                  className="contact-input"
+                  onChange={handleChange}
                 />
                 <textarea
-                  rows={1}
-                  name="meassafg"
+                  rows={6}
                   id="message"
+                  name="message"
+                  value={formData.message}
                   placeholder={link.message}
-                  className="px-4 pt-3 pb-12 rounded-lg border-1 border-light-grey"
+                  className="px-4 pt-3 rounded-lg border-1 border-light-grey resize-none"
+                  onChange={handleChange}
                 ></textarea>
                 <div className="flex justify-center">
-                  <a href="" className="btn-primary w-full lg:w-52 text-center">
-                    {link.button}
-                  </a>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className={`w-full lg:w-52 text-center transition-colors duration-200 ${
+                      loading ? "btn-loading" : "btn-primary"
+                    }`}
+                  >
+                    {loading ? link.loading : link.button}
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         ))}
+        <ToastContainer />
       </section>
     </>
   );
