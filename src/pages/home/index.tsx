@@ -1,5 +1,5 @@
 import Me from "../../pages/home/assets/heritiana-colorless.png";
-import cv from "../../images/download/CV Heritiana RAVELOSON.pdf";
+import cv from "../../images/download/CV Heritiana Raveloson.pdf";
 import LinkedInIcon from "./assets/linkedinIcon";
 import GitHubIcon from "./assets/githubIcon";
 import ParticleBackground from "../../components/ui/particle-background";
