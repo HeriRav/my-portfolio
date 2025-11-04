@@ -78,8 +78,8 @@ const academicEn = [
     title: "Espace Universitaire Régional de l'Océan Indien (EUROI)",
     degree:
       "Professional Bachelor's Degree in Electronics / Computer Science / Telecommunications",
-    start_date: "Septembre 2022",
-    end_date: "April 2023",
+    start_date: "August 2017",
+    end_date: "June 2022",
     description:
       "Obtained a Professional Bachelor's Degree in Electronics, Computer Science, and Telecommunications after successfully defending my thesis.",
   },
@@ -108,9 +108,7 @@ const Timeline = ({
           >
             <div
               className={`lg:w-1/2 px-4 ${
-                isLeft
-                  ? "lg:pr-12 text-left"
-                  : "lg:pl-12 text-left"
+                isLeft ? "lg:pr-12 text-left" : "lg:pl-12 text-left"
               }`}
             >
               <div className="bg-dark-grey border border-primary-hover shadow-lg p-6 rounded-lg hover:scale-105 transition-all duration-300">
