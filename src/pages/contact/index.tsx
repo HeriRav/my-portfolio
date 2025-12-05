@@ -27,12 +27,12 @@ const contactEn = [
   },
   {
     title: "E-mail",
-    contact: "heritiana.rav@gmail.com",
+    contact: "heriravel00@gmail.com",
     icon: EmailIcon,
   },
   {
     title: "Call",
-    contact: "034 77 768 96",
+    contact: "+261 34 77 768 96",
     icon: PhoneIcon,
   },
 ];

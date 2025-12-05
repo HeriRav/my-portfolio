@@ -10,6 +10,8 @@ import CPlusPlusIcon from "./assets/cSharpIcon";
 import ReactIcon from "./assets/reactIcon";
 import GatsbyIcon from "./assets/gatsbyIcon";
 import BlenderIcon from "./assets/blenderIcon";
+import ClipPath from "./assets/clipPath";
+import GithubIcon from "./assets/gitHubIcon";
 
 const linksEn = [
   {
@@ -26,6 +28,23 @@ const linksEn = [
 //     button_label: 'Voir les détails',
 //   },
 // ]
+
+const Tooltip = ({
+  title,
+  children,
+}: {
+  title: React.ReactNode;
+  children: React.ReactNode;
+}) => (
+  <div className="relative group flex items-center justify-center min-w-[40px] min-h-[40px] max-w-[60px]">
+    <div className="flex items-center justify-center w-full h-full">
+      {children}
+    </div>
+    <div className="absolute z-50 bottom-full mb-2 px-2 py-1 rounded bg-dark-grey text-light-grey text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal lg:whitespace-nowrap pointer-events-none">
+      {title}
+    </div>
+  </div>
+);
 
 const worksEn = [
   {
@@ -48,11 +67,14 @@ const worksEn = [
   },
   {
     name: "Samysamy",
-    description: "Desktop application : Platform connecting freelancers and companies.",
+    description:
+      "Desktop application : Platform connecting freelancers and companies.",
     img: Samysamy,
     job: "Exam Project",
     technologies: ["C#", "WPF", "Visual Studio", "PostgeSQL"],
     icon: <CPlusPlusIcon />,
+    link: "https://github.com/MendrikaRajaonarison/Samysamy",
+    link_label: "Frontend & Backend Repository",
   },
   {
     name: "Mihary'ket",
@@ -68,6 +90,10 @@ const worksEn = [
       "Stripe",
     ],
     icon: <ReactIcon />,
+    link: "https://github.com/HeriRav/Miharyket-FrontEnd",
+    other_link: "https://github.com/randrianiaina/mihary-back",
+    link_label: "Frontend Repository",
+    other_link_label: "Backend Repository",
   },
   {
     name: "Blender - Donut",
@@ -77,6 +103,8 @@ const worksEn = [
     job: "Personal Project",
     technologies: ["Blender", "Cycles"],
     icon: <BlenderIcon />,
+    link: "/src/pages/works/blender/donut.blend",
+    link_label: "Download .blend File (requires Blender)",
   },
   {
     name: "Zeno Landing Page",
@@ -93,6 +121,10 @@ const worksEn = [
       "EmailJs",
     ],
     icon: <GatsbyIcon />,
+    link: "https://github.com/HeriRav/landing-page-zeno",
+    link_label: "Landing Page Repository",
+    other_link: "https://landing-page-zeno.vercel.app/",
+    other_link_label: "Live Site",
   },
 ];
 
@@ -107,6 +139,18 @@ const Works = () => {
 
   const closeModal = () => {
     setSelectedWork(null);
+  };
+
+  const handleProjectLinkClick = () => {
+    if (selectedWork && selectedWork.link) {
+      window.open(selectedWork.link, "_blank");
+    }
+  };
+
+  const handleOtherProjectLinkClick = () => {
+    if (selectedWork && selectedWork.other_link) {
+      window.open(selectedWork.other_link, "_blank");
+    }
   };
 
   // Handle body overflow when modal is open
@@ -163,7 +207,9 @@ const Works = () => {
           >
             <div className="flex flex-row items-start mb-6">
               <div className="flex flex-row items-center">
-                <h2 className="text-4xl !text-transparent font-bold italic bg-gradient-to-r from-primary via-primary-hover to-secondary bg-clip-text leading-tight">{selectedWork.name}</h2>
+                <h2 className="text-4xl !text-transparent font-bold italic bg-gradient-to-r from-primary via-primary-hover to-secondary bg-clip-text leading-tight">
+                  {selectedWork.name}
+                </h2>
                 <p className="px-2">{selectedWork.icon}</p>
               </div>
               <button
@@ -191,12 +237,42 @@ const Works = () => {
                 {selectedWork.description}
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <div className="bg-gradient-to-r from-purple-100 to-green-100 rounded-full px-6 py-3 border border-purple-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <span className="bg-gradient-to-r from-primary to-secondary-hover bg-clip-text !text-transparent text-sm font-bold">
-                  {selectedWork.technologies.join(" | ")}
-                </span>
+            <div className="flex flex-row items-start mb-4">
+              <div className="flex flex-wrap gap-3">
+                <div className="bg-gradient-to-r from-purple-100 to-green-100 rounded-full px-6 py-3 border border-purple-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <span className="bg-gradient-to-r from-primary to-secondary-hover bg-clip-text !text-transparent text-sm font-bold">
+                    {selectedWork.technologies.join(" | ")}
+                  </span>
+                </div>
               </div>
+            </div>
+            <div className="flex flex-row justify-center gap-x-10">
+              {selectedWork.link && (
+                <div className="transition-all duration-300 transform hover:scale-110 group border border-dark-grey rounded-full p-2">
+                  <Tooltip title={selectedWork.link_label}>
+                    <button onClick={handleProjectLinkClick}>
+                      {selectedWork.link?.includes("github") ? (
+                        <GithubIcon />
+                      ) : (
+                        <ClipPath />
+                      )}
+                    </button>
+                  </Tooltip>
+                </div>
+              )}
+              {selectedWork.other_link && (
+                <div className="transition-all duration-300 transform hover:scale-110 group border border-dark-grey rounded-full p-2">
+                  <Tooltip title={selectedWork.other_link_label}>
+                    <button onClick={handleOtherProjectLinkClick}>
+                      {selectedWork.other_link?.includes("github") ? (
+                        <GithubIcon />
+                      ) : (
+                        <ClipPath />
+                      )}
+                    </button>
+                  </Tooltip>
+                </div>
+              )}
             </div>
           </div>
         </div>
