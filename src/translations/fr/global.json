@@ -1,0 +1,116 @@
+{
+  "header": {
+    "name": "Heritiana R.",
+    "title": "Mon portfolio",
+    "home": "Accueil",
+    "works": "Réalisations",
+    "skills": "Compétences",
+    "about": "À propos",
+    "resume": "Parcours",
+    "contact": "Contact",
+    "languages": "Langues"
+  },
+  "home": {
+    "greeting": "Salut, je suis",
+    "name": "Heritiana Raveloson",
+    "role": "Développeur de logiciels",
+    "contact": "Contactez moi",
+    "download": "Télécharger le CV"
+  },
+  "works": {
+    "title": "Mes Réalisations",
+    "description": "Présentation de mes projets et contributions",
+    "button": "Voir les détails",
+    "work_1": {
+      "title": "Eto.mg",
+      "role": "Stage",
+      "description": "Site immobilier complet conçu pour faciliter les transactions."
+    },
+    "work_2": {
+      "title": "TCA (Titre de Circulation Aéroportuaire)",
+      "role": "Soutenance de Licence",
+      "description": "Application web pour la demande d’un Titre de Circulation Aéroportuaire permanent."
+    },
+    "work_3": {
+      "title": "Samysamy",
+      "role": "Projet d'examen",
+      "description": "Application de bureau : plateforme reliant freelances et entreprises.",
+      "link" : "Répertoire Frontend & Backend"
+    },
+    "work_4": {
+      "title": "Mihary'ket",
+      "role": "Soutenance de Master",
+      "description": "Plateforme de vente en ligne de produits agricultures.",
+      "link_1" : "Répertoire Frontend",
+      "link_2" : "Répertoire Backend"
+    },
+    "work_5": {
+      "title": "Blender - Donut",
+      "role": "Projet personnel",
+      "description": "Projet de modélisation 3D d’un donut avec Blender et le moteur de rendu Cycles.",
+      "link" : "Télécharger le fichier .blend (nécessite Blender)"
+    },
+    "work_6": {
+      "title": "Zeno Landing Page",
+      "role": "Mission en CDI",
+      "description": "Site vitrine pour Zeno.",
+      "link_1" : "Répertoire de la Landing Page",
+      "link_2" : "Site officiel de Zeno"
+    }
+  },
+  "skills": {
+  "title": "Mes Compétences",
+  "description": "Un aperçu de mes compétences techniques et de mon expertise",
+  "frontend": {
+    "title": "Frontend",
+    "react": "Bibliothèque JavaScript pour le front-end",
+    "gatsby": "Framework open source basé sur React",
+    "typescript": "Langage fortement typé basé sur JavaScript",
+    "tailwind": "Framework CSS basé sur des utilitaires"
+  },
+  "backend": {
+    "title": "Backend",
+    "java": "Langage de programmation orienté objet de haut niveau",
+    "springBoot": "Framework Java / extension de Spring Framework",
+    "node": "Environnement d’exécution JavaScript basé sur V8 de Chrome",
+    "express": "Framework web minimaliste pour Node.js"
+  },
+  "database": {
+    "title": "Base de Données",
+    "mysql": "Système de gestion de base de données relationnelle",
+    "sqlServer": "Base de données SQL d’entreprise de Microsoft",
+    "postgresql": "Base de données relationnelle open source avancée",
+    "mongodb": "Base de données NoSQL utilisant des documents flexibles proches de JSON"
+  },
+  "versionControl": {
+    "title": "Contrôle de Version",
+    "git": "Système de contrôle de version distribué",
+    "github": "Plateforme en ligne pour héberger des dépôts Git"
+  },
+  "cicd": {
+    "title": "CI/CD",
+    "gitlabCi": "Outil d’intégration continue intégré à GitLab"
+  },
+  "tools": {
+    "title": "Outils",
+    "vsCode": "Éditeur de code source développé par Microsoft",
+    "intellij": "IDE Java pour le développement logiciel",
+    "docker": "Plateforme pour développer, déployer et exécuter des applications dans des conteneurs",
+    "postman": "Environnement pour le développement d’API"
+  }
+},
+"about": {
+  "title": "À Propos de Moi",
+  "description": "Développeur logiciel | Passionné par l’innovation et les nouveaux défis"
+},
+"resume": {
+  "title": "Mon CV",
+  "description": "Mon parcours professionnel et académique",
+  "sub_description": "Depuis l’obtention de mon diplôme, je suis rapidement entré dans le monde professionnel, ce qui me permet de développer mes compétences au quotidien"
+},
+"contact": {
+  "title": "Me Contacter",
+  "description": "Un projet à développer ou un poste à pourvoir ? Discutons-en !"
+}
+
+}
