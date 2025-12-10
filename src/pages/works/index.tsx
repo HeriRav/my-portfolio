@@ -12,22 +12,7 @@ import GatsbyIcon from "./assets/gatsbyIcon";
 import BlenderIcon from "./assets/blenderIcon";
 import ClipPath from "./assets/clipPath";
 import GithubIcon from "./assets/gitHubIcon";
-
-const linksEn = [
-  {
-    title: "My Works",
-    description: "Showcasing my projects and contributions",
-    button_label: "View details",
-  },
-];
-
-// const linksFr = [
-//   {
-//     title: 'Mes Projets',
-//     description: 'Présentation de mes projets et contributions',
-//     button_label: 'Voir les détails',
-//   },
-// ]
+import { useTranslation } from "react-i18next";
 
 const Tooltip = ({
   title,
@@ -46,91 +31,97 @@ const Tooltip = ({
   </div>
 );
 
-const worksEn = [
-  {
-    name: "Eto.mg",
-    description:
-      "Comprehensive real estate website designed to facilitate transactions.",
-    img: Eto,
-    job: "Internship",
-    technologies: ["WordPress", "PHP"],
-    icon: <WordpressIcon />,
-  },
-  {
-    name: "TCA (Airport Circular Title)",
-    description:
-      "Web application for requesting a permanent Airport Circular Title.",
-    img: Tca,
-    job: "Thesis Defense for Bachelor's Degree",
-    technologies: ["C#", ".NET", "Visual Studio", "SQL Server"],
-    icon: <CPlusPlusIcon />,
-  },
-  {
-    name: "Samysamy",
-    description:
-      "Desktop application : Platform connecting freelancers and companies.",
-    img: Samysamy,
-    job: "Exam Project",
-    technologies: ["C#", "WPF", "Visual Studio", "PostgeSQL"],
-    icon: <CPlusPlusIcon />,
-    link: "https://github.com/MendrikaRajaonarison/Samysamy",
-    link_label: "Frontend & Backend Repository",
-  },
-  {
-    name: "Mihary'ket",
-    description: "Online sales platform for handicraft products.",
-    img: Miharyket,
-    job: "Thesis Defense for Master's Degree",
-    technologies: [
-      "React",
-      "Vite",
-      "Bootstrap",
-      "Spring Boot",
-      "PostreSQL",
-      "Stripe",
-    ],
-    icon: <ReactIcon />,
-    link: "https://github.com/HeriRav/Miharyket-FrontEnd",
-    other_link: "https://github.com/randrianiaina/mihary-back",
-    link_label: "Frontend Repository",
-    other_link_label: "Backend Repository",
-  },
-  {
-    name: "Blender - Donut",
-    description:
-      "3D donut modeling project using Blender with Cycles render engine.",
-    img: Blender,
-    job: "Personal Project",
-    technologies: ["Blender", "Cycles"],
-    icon: <BlenderIcon />,
-    link: "/src/pages/works/blender/donut.blend",
-    link_label: "Download .blend File (requires Blender)",
-  },
-  {
-    name: "Zeno Landing Page",
-    description: "Showcase site",
-    img: Zeno,
-    job: "Permanent Contract Mission",
-    technologies: [
-      "Gatsby",
-      "Typescript",
-      "Tailwind CSS",
-      "Express.js",
-      "MongoDB",
-      "Atlas",
-      "EmailJs",
-    ],
-    icon: <GatsbyIcon />,
-    link: "https://github.com/HeriRav/landing-page-zeno",
-    link_label: "Landing Page Repository",
-    other_link: "https://landing-page-zeno.vercel.app/",
-    other_link_label: "Live Site",
-  },
-];
-
-type Work = (typeof worksEn)[number];
-
 const Works = () => {
+  const { t } = useTranslation();
+
+  const label = [
+    {
+      title: t("works.title"),
+      description: t("works.description"),
+      button_label: t("works.button"),
+    },
+  ];
+
+  const worksLang = [
+    {
+      name: t("works.work_1.title"),
+      description: t("works.work_1.description"),
+      img: Eto,
+      job: t("works.work_1.role"),
+      technologies: ["WordPress", "PHP"],
+      icon: <WordpressIcon />,
+    },
+    {
+      name: t("works.work_2.title"),
+      description: t("works.work_2.description"),
+      img: Tca,
+      job: t("works.work_2.role"),
+      technologies: ["C#", ".NET", "Visual Studio", "SQL Server"],
+      icon: <CPlusPlusIcon />,
+    },
+    {
+      name: t("works.work_3.title"),
+      description: t("works.work_3.description"),
+      img: Samysamy,
+      job: t("works.work_3.role"),
+      technologies: ["C#", "WPF", "Visual Studio", "PostgeSQL"],
+      icon: <CPlusPlusIcon />,
+      link: "https://github.com/MendrikaRajaonarison/Samysamy",
+      link_label: t("works.work_3.link"),
+    },
+    {
+      name: t("works.work_4.title"),
+      description: t("works.work_4.description"),
+      img: Miharyket,
+      job: t("works.work_4.role"),
+      technologies: [
+        "React",
+        "Vite",
+        "Bootstrap",
+        "Spring Boot",
+        "PostreSQL",
+        "Stripe",
+      ],
+      icon: <ReactIcon />,
+      link: "https://github.com/HeriRav/Miharyket-FrontEnd",
+      other_link: "https://github.com/randrianiaina/mihary-back",
+      link_label: t("works.work_4.link_1"),
+      other_link_label: t("works.work_4.link_2"),
+    },
+    {
+      name: t("works.work_5.title"),
+      description: t("works.work_5.description"),
+      img: Blender,
+      job: t("works.work_5.role"),
+      technologies: ["Blender", "Cycles"],
+      icon: <BlenderIcon />,
+      link: "/src/pages/works/blender/donut.blend",
+      link_label: t("works.work_5.link"),
+    },
+    {
+      name: t("works.work_6.title"),
+      description: t("works.work_6.description"),
+      img: Zeno,
+      job: t("works.work_6.role"),
+      technologies: [
+        "Gatsby",
+        "Typescript",
+        "Tailwind CSS",
+        "Express.js",
+        "MongoDB",
+        "Atlas",
+        "EmailJs",
+      ],
+      icon: <GatsbyIcon />,
+      link: "https://github.com/HeriRav/landing-page-zeno",
+      link_label: t("works.work_6.link_1"),
+      other_link: "https://landing-page-zeno.vercel.app/",
+      other_link_label: t("works.work_6.link_2"),
+    },
+  ];
+
+  type Work = (typeof worksLang)[number];
+
   const [selectedWork, setSelectedWork] = useState<Work | null>(null);
 
   const openModal = (work: Work) => {
@@ -169,14 +160,14 @@ const Works = () => {
 
   return (
     <section id="WORKS" className="flex flex-col items-center py-4">
-      {linksEn.map((link, index) => (
+      {label.map((link, index) => (
         <div key={index} className="section-container">
           <h2 className="title">{link.title}</h2>
           <p className="text-center text-3xl mb-6 !text-dark-grey">
             {link.description}
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-center">
-            {worksEn.map((work, idx) => (
+            {worksLang.map((work, idx) => (
               <div
                 key={idx}
                 className="relative flex flex-col h-full max-w-md lg:max-w-sm rounded-lg overflow-hidden border border-light-grey shadow-lg bg-white mb-4 transition-all duration-300"

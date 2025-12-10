@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
-import { navigationLinksEn } from "../header/data";
+import { navigationLinksKeys } from "../header/data";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
+import EnFlag from "../header/assets/enFlag";
+import FrFlag from "../header/assets/frFlag";
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -14,6 +17,18 @@ const scrollToSection = (id: string) => {
 const Popup = ({ onClose }: { onClose: () => void }) => {
   const [closing, setClosing] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("HOME");
+  const [t, i18n] = useTranslation("global");
+  const [showLangMenu, setShowLangMenu] = useState(false);
+
+  const navigationLinks = navigationLinksKeys.map((link) => ({
+    ...link,
+    label: t(`header.${link.keys}`),
+  }));
+
+  const handleChangeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("lang", lang);
+  };
 
   const handleScroll = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -24,7 +39,7 @@ const Popup = ({ onClose }: { onClose: () => void }) => {
   };
 
   useEffect(() => {
-    const sectionIds = navigationLinksEn.map((link) => link.to);
+    const sectionIds = navigationLinksKeys.map((link) => link.to);
 
     const handleScrollSpy = () => {
       const offset = 100;
@@ -105,7 +120,7 @@ const Popup = ({ onClose }: { onClose: () => void }) => {
         </button>
 
         <ul className="flex flex-col items-center justify-center space-y-4">
-          {navigationLinksEn.map((link, index: number) => (
+          {navigationLinks.map((link, index: number) => (
             <li className="block py-2 text-black" key={`link-${index}`}>
               <a
                 href={link.to}
@@ -126,6 +141,41 @@ const Popup = ({ onClose }: { onClose: () => void }) => {
               />
             </li>
           ))}
+          <div className="mt-6 flex flex-col items-center w-full">
+            <div className="relative">
+              <button
+                onClick={() => setShowLangMenu(!showLangMenu)}
+                className="text-light font-semibold border border-light px-3 py-1 rounded"
+              >
+                {t("header.languages")}
+              </button>
+
+              {showLangMenu && (
+                <div className="absolute top-full left-0 mt-2 bg-transparent text-light border border-light rounded shadow-md overflow-hidden animate-[fadeInScale_0.15s_ease-out]">
+                  <button
+                    onClick={() => {
+                      handleChangeLanguage("en");
+                      setShowLangMenu(false);
+                      closeMenu();
+                    }}
+                    className="flex gap-x-2 px-4 py-2 hover:bg-dark text-left w-full transition-all"
+                  >
+                    <EnFlag /> EN
+                  </button>
+                  <button
+                    onClick={() => {
+                      handleChangeLanguage("fr");
+                      setShowLangMenu(false);
+                      closeMenu();
+                    }}
+                    className="flex gap-x-2 px-4 py-2 hover:bg-dark text-left w-full transition-all"
+                  >
+                    <FrFlag /> FR
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
         </ul>
       </div>
     </div>
