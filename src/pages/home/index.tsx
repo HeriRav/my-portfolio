@@ -1,5 +1,6 @@
 import Me from "../../pages/home/assets/heritiana-colorless.png";
-import cv from "../../images/download/CV Heritiana RAVELOSON.pdf";
+import en from "../../images/download/en/Heritiana Raveloson(en).pdf";
+import fr from "../../images/download/fr/Heritiana Raveloson(fr).pdf";
 import LinkedInIcon from "./assets/linkedinIcon";
 import GitHubIcon from "./assets/githubIcon";
 import ParticleBackground from "../../components/ui/particle-background";
@@ -83,8 +84,12 @@ const Home = () => {
                   {t("home.contact")} &#129146;
                 </a>
                 <a
-                  href={cv}
-                  download={cv}
+                  href={t("home.resume") === "en" ? en : fr}
+                  download={
+                    t("home.resume") === "en"
+                      ? "CV Heritiana RAVELOSON(en).pdf"
+                      : "CV Heritiana RAVELOSON(fr).pdf"
+                  }
                   className="btn-secondary w-48 md:w-52 md:ml-2"
                 >
                   {t("home.download")} &#10515;
