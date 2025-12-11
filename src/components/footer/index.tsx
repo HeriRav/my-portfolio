@@ -1,15 +1,18 @@
 import LinkedInIcon from "./assets/linkedinIcon";
 import GitHubIcon from "./assets/githubIcon";
-
-const linksEn = [
-  {
-    rights: "All Rights Reserved",
-    linkedin: "https://www.linkedin.com/in/heritiana-raveloson-564347236/",
-    github: "https://github.com/HeriRav",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const linksEn = [
+    {
+      rights: t("footer.rights"),
+      linkedin: "https://www.linkedin.com/in/heritiana-raveloson-564347236/",
+      github: "https://github.com/HeriRav",
+    },
+  ];
+
   return (
     <footer className="py-4 md:py-20 bg-footer md:h-24 flex items-center justify-center">
       {linksEn.map((link, index) => (

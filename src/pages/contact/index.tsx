@@ -5,39 +5,42 @@ import ContactIcon from "./assets/contact-icon.png";
 import LocalisationIcon from "./assets/localisationIcon";
 import EmailIcon from "./assets/emailIcon";
 import PhoneIcon from "./assets/phoneIcon";
-
-const linksEn = [
-  {
-    title: "Contact",
-    description: "Got a project to develop or a position to fill? Let’s talk!",
-    name: "Name",
-    phone: "Phone number",
-    email: "E-mail",
-    message: "Message",
-    button: "Send",
-    loading: "Sending...",
-  },
-];
-
-const contactEn = [
-  {
-    title: "Localisation",
-    contact: "Antananarivo 101, Madagascar",
-    icon: LocalisationIcon,
-  },
-  {
-    title: "E-mail",
-    contact: "heriravel00@gmail.com",
-    icon: EmailIcon,
-  },
-  {
-    title: "Call",
-    contact: "+261 34 77 768 96",
-    icon: PhoneIcon,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
+  const links = [
+    {
+      title: t("contact.title"),
+      description: t("contact.description"),
+      name: t("contact.name"),
+      phone: t("contact.phone"),
+      email: t("contact.email"),
+      message: t("contact.message"),
+      button: t("contact.button"),
+      loading: t("contact.loading"),
+    },
+  ];
+
+  const contact = [
+    {
+      title: t("contact.location.title"),
+      contact: t("contact.location.contact"),
+      icon: LocalisationIcon,
+    },
+    {
+      title: t("contact.mail.title"),
+      contact: t("contact.mail.contact"),
+      icon: EmailIcon,
+    },
+    {
+      title: t("contact.call.title"),
+      contact: t("contact.call.contact"),
+      icon: PhoneIcon,
+    },
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     tel: "",
@@ -134,14 +137,14 @@ const Contact = () => {
   return (
     <>
       <section id="CONTACT" className="flex flex-col items-center py-4">
-        {linksEn.map((link, index) => (
+        {links.map((link, index) => (
           <div key={index} className="section-container">
             <h2 className="title">{link.title}</h2>
             <p className="text-center text-3xl !text-dark-grey">
               {link.description}
             </p>
             <div className="flex flex-col justify-center space-y-8 md:flex-row md:space-x-24 md:space-y-0 md:items-center py-8">
-              {contactEn.map((contact, index) => (
+              {contact.map((contact, index) => (
                 <div key={index} className="flex items-center space-x-4">
                   <span className="max-w-10 max-h-10 flex items-center justify-center">
                     <contact.icon aria-label={contact.title} />
