@@ -10,13 +10,16 @@
     "contact": "Contact",
     "languages": "Langues"
   },
+
   "home": {
     "greeting": "Salut, je suis",
     "name": "Heritiana Raveloson",
     "role": "Développeur de logiciels",
     "contact": "Contactez moi",
-    "download": "Télécharger le CV"
+    "download": "Télécharger le CV",
+    "resume": "fr"
   },
+
   "works": {
     "title": "Mes Réalisations",
     "description": "Présentation de mes projets et contributions",
@@ -58,59 +61,155 @@
       "link_2" : "Site officiel de Zeno"
     }
   },
-  "skills": {
-  "title": "Mes Compétences",
-  "description": "Un aperçu de mes compétences techniques et de mon expertise",
-  "frontend": {
-    "title": "Frontend",
-    "react": "Bibliothèque JavaScript pour le front-end",
-    "gatsby": "Framework open source basé sur React",
-    "typescript": "Langage fortement typé basé sur JavaScript",
-    "tailwind": "Framework CSS basé sur des utilitaires"
-  },
-  "backend": {
-    "title": "Backend",
-    "java": "Langage de programmation orienté objet de haut niveau",
-    "springBoot": "Framework Java / extension de Spring Framework",
-    "node": "Environnement d’exécution JavaScript basé sur V8 de Chrome",
-    "express": "Framework web minimaliste pour Node.js"
-  },
-  "database": {
-    "title": "Base de Données",
-    "mysql": "Système de gestion de base de données relationnelle",
-    "sqlServer": "Base de données SQL d’entreprise de Microsoft",
-    "postgresql": "Base de données relationnelle open source avancée",
-    "mongodb": "Base de données NoSQL utilisant des documents flexibles proches de JSON"
-  },
-  "versionControl": {
-    "title": "Contrôle de Version",
-    "git": "Système de contrôle de version distribué",
-    "github": "Plateforme en ligne pour héberger des dépôts Git"
-  },
-  "cicd": {
-    "title": "CI/CD",
-    "gitlabCi": "Outil d’intégration continue intégré à GitLab"
-  },
-  "tools": {
-    "title": "Outils",
-    "vsCode": "Éditeur de code source développé par Microsoft",
-    "intellij": "IDE Java pour le développement logiciel",
-    "docker": "Plateforme pour développer, déployer et exécuter des applications dans des conteneurs",
-    "postman": "Environnement pour le développement d’API"
-  }
-},
-"about": {
-  "title": "À Propos de Moi",
-  "description": "Développeur logiciel | Passionné par l’innovation et les nouveaux défis"
-},
-"resume": {
-  "title": "Mon CV",
-  "description": "Mon parcours professionnel et académique",
-  "sub_description": "Depuis l’obtention de mon diplôme, je suis rapidement entré dans le monde professionnel, ce qui me permet de développer mes compétences au quotidien"
-},
-"contact": {
-  "title": "Me Contacter",
-  "description": "Un projet à développer ou un poste à pourvoir ? Discutons-en !"
-}
 
+  "skills": {
+    "title": "Mes Compétences",
+    "description": "Un aperçu de mes compétences techniques et de mon expertise",
+    "frontend": {
+      "title": "Frontend",
+      "react": "Bibliothèque JavaScript pour le front-end",
+      "gatsby": "Framework open source basé sur React",
+      "typescript": "Langage fortement typé basé sur JavaScript",
+      "tailwind": "Framework CSS basé sur des utilitaires"
+    },
+    "backend": {
+      "title": "Backend",
+      "java": "Langage de programmation orienté objet de haut niveau",
+      "springBoot": "Framework Java / extension de Spring Framework",
+      "node": "Environnement d’exécution JavaScript basé sur V8 de Chrome",
+      "express": "Framework web minimaliste pour Node.js"
+    },
+    "database": {
+      "title": "Base de Données",
+      "mysql": "Système de gestion de base de données relationnelle",
+      "sqlServer": "Base de données SQL d’entreprise de Microsoft",
+      "postgresql": "Base de données relationnelle open source avancée",
+      "mongodb": "Base de données NoSQL utilisant des documents flexibles proches de JSON"
+    },
+    "versionControl": {
+      "title": "Contrôle de Version",
+      "git": "Système de contrôle de version distribué",
+      "github": "Plateforme en ligne pour héberger des dépôts Git"
+    },
+    "cicd": {
+      "title": "CI/CD",
+      "gitlabCi": "Outil d’intégration continue intégré à GitLab"
+    },
+    "tools": {
+      "title": "Outils",
+      "vsCode": "Éditeur de code source développé par Microsoft",
+      "intellij": "IDE Java pour le développement logiciel",
+      "docker": "Plateforme pour développer, déployer et exécuter des applications dans des conteneurs",
+      "postman": "Environnement pour le développement d’API"
+    }
+  },
+
+  "about": {
+    "title": "À Propos de Moi",
+    "description": "Développeur logiciel | Passionné par l’innovation et les nouveaux défis",
+    "expertise": "Spécialisé dans le développement <1>front-end</1> avec des connaissances en <3>back-end</3>, je conçois des interfaces utilisateur intuitives et performantes. Mon expertise en <5>JavaScript/TypeScript et Java</5> me permet de transformer des idées créatives en applications web réactives.",
+    "paragraph": "Toujours à l’affût des dernières innovations, je m’efforce d’améliorer continuellement mes compétences. J’optimise les performances et expérimente de nouvelles approches pour créer des solutions de qualité répondant aux besoins des utilisateurs.",
+    "contact" : "Contactez moi"
+  },
+
+  "resume": {
+    "title": "Mon CV",
+    "description": "Mon parcours professionnel et académique",
+    "sub_description": "Depuis l’obtention de mon diplôme, je suis rapidement entré dans le monde professionnel, ce qui me permet de développer mes compétences au quotidien",
+    "diplomas": "Mes Diplômes",
+    "professional": [
+      {
+        "title": "Zeno Inno",
+        "contract": "Temps plein",
+        "start_date": "Août 2024",
+        "end_date": "En cours",
+        "job": "Développeur Logiciel",
+        "description": "Création d’interfaces utilisateurs dynamiques avec React. Intégration de composants réutilisables avec Tailwind CSS. Collaboration étroite avec les équipes produit pour améliorer l’expérience utilisateur."
+      },
+      {
+        "title": "Zeno Inno",
+        "contract": "Stage",
+        "start_date": "Mai 2024",
+        "end_date": "Juillet 2024",
+        "job": "Stagiaire Développeur Logiciel",
+        "description": "Mise en place d’un système de traitement par lots avec Spring Batch ciblant une base de données PostgreSQL et développement d’une fonctionnalité d’interface drag-and-drop avec React."
+      },
+      {
+        "title": "Projet Personnel",
+        "contract": "Projet annexe",
+        "start_date": "Décembre 2023",
+        "end_date": "Mars 2024",
+        "job": "Designer 3D",
+        "description": "Conception et modélisation d’un donut 3D réaliste avec Blender, en mettant l’accent sur la forme, la texture et l’éclairage. Création d’un décor pour renforcer l’attrait visuel et la composition de la scène. Ce projet a démontré une maîtrise de la modélisation 3D, des matériaux et des techniques de rendu."
+      },
+      {
+        "title": "Software Overseas Academy (SOA)",
+        "contract": "Contrat à durée déterminée",
+        "start_date": "Avril 2023",
+        "end_date": "Octobre 2023",
+        "job": "Développeur d’Applications Logiciel",
+        "description": "Responsable du développement et de la maintenance de l’application. Conception et intégration de tests end-to-end dans le cadre d’une refonte majeure pour améliorer la fiabilité et les performances."
+      },
+      {
+        "title": "Inclusiv Academy",
+        "contract": "Stage de formation",
+        "start_date": "Octobre 2022",
+        "end_date": "Avril 2023",
+        "job": "Concepteur & Développeur d’Applications Numériques",
+        "description": "- Projet Web : Conception et mise en œuvre d'une application web utilisant React.js, Spring Boot, et PostgreSQL. Cette plateforme connecte directement les agriculteurs avec les clients finaux, améliorant ainsi la chaîne d'approvisionnement agricole.\n- Projet Desktop : Conception et développement d'une application de bureau utilisant Visual Studio, WPF (.NET Framework, C#), et PostgreSQL. L'application facilite les connexions entre les freelances et les entreprises, rationalisant le processus de recrutement."
+      },
+      {
+        "title": "Your Target Agency",
+        "contract": "Stage",
+        "start_date": "Octobre 2021",
+        "end_date": "Mars 2022",
+        "job": "Stagiaire Développeur Wordpress",
+        "description": "- Mise en place d’un environnement local avec XAMPP.\n- Développement et mise en ligne d’un site immobilier sous WordPress.\n- Refonte du site webmaster-madagascar.com avec Elementor.\n- Intégration des produits du supermarché « Kibo » sur PrestaShop.\n- Création et gestion d’une page blog sur le site Best Place."
+      }
+    ],
+
+    "academic": [
+      {
+        "title": "Inclusiv Academy",
+        "degree": "Certification RNCP Niveau 6, équivalent à une première année de Master",
+        "start_date": "Septembre 2022",
+        "end_date": "Avril 2023",
+        "description": "Obtention de la certification RNCP Niveau 6, reconnue comme équivalente à une première année d'un Master."
+      },
+      {
+        "title": "Espace Universitaire Régional de l'Océan Indien (EUROI)",
+        "degree": "Licence Professionnelle en Électronique / Informatique / Télécommunications",
+        "start_date": "Août 2017",
+        "end_date": "Juin 2022",
+        "description": "Obtention d’une Licence Professionnelle en Électronique, Informatique et Télécommunications après soutenance du mémoire."
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Me Contacter",
+    "description": "Un projet à développer ou un poste à pourvoir ? Discutons-en !",
+    "name": "Nom complet",
+    "phone": "Numéro de téléphone",
+    "email": "E-mail",
+    "message": "Message",
+    "button": "Envoyer",
+    "loading": "Envoi...",
+    "location": {
+      "title": "Localisation",
+      "contact": "Antananarivo 103, Madagascar"
+    },
+    "mail": {
+      "title": "E-mail",
+      "contact": "heriravel00@gmail.com"
+    },
+    "call": {
+      "title": "Téléphone",
+      "contact": "+261 34 77 768 96"
+    }
+  },
+  
+  "footer": {
+    "rights": "Tous droits réservés."
+  }
 }
