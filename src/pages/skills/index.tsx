@@ -15,20 +15,10 @@ import GitlabIcon from "./assets/gitlabIcon";
 import VsCodeIcon from "./assets/vsCodeIcon";
 import IntellijIcon from "./assets/intellijIcon";
 import GitHubIcon from "./assets/gitHubIcon";
-
-const linksEn = [
-  {
-    title: "My Skills",
-    description: "A showcase of my technical skills and expertise",
-  },
-];
-
-// const linksFr = [
-//   {
-//     title: 'Mes Compétences',
-//     description: 'Une vitrine de mes compétences techniques et expertise',
-//   },
-// ];
+import GitIcon from "./assets/gitIcon";
+import DockerIcon from "./assets/dockerIcon";
+import PostmanIcon from "./assets/postmanIcon";
+import { useTranslation } from "react-i18next";
 
 const Tooltip = ({
   title,
@@ -45,227 +35,6 @@ const Tooltip = ({
   </div>
 );
 
-const skillsEn = [
-  {
-    title: "Frontend",
-    tech: (
-      <>
-        <Tooltip
-          title={
-            <>
-              Frontend
-              <br />
-              Front-end JavaScript library
-            </>
-          }
-        >
-          <ReactIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Gatsby
-              <br />
-              React-based open source framework
-            </>
-          }
-        >
-          <GatsbyIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Typescript
-              <br />A strongly typed programming language that builds on
-              JavaScript
-            </>
-          }
-        >
-          <TypescriptIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Taiwind CSS
-              <br />
-              Utility-first CSS framework
-            </>
-          }
-        >
-          <TailwindIcon />
-        </Tooltip>
-      </>
-    ),
-  },
-  {
-    title: "Backend",
-    tech: (
-      <>
-        <Tooltip
-          title={
-            <>
-              Java
-              <br />
-              High-level object-oriented programming language
-            </>
-          }
-        >
-          <JavaIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Spring Boot
-              <br />
-              Java framework / Spring Framework extension
-            </>
-          }
-        >
-          <SpringIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Node.js
-              <br />
-              JavaScript runtime environment
-            </>
-          }
-        >
-          <NodeIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Express.js
-              <br />
-              Node.js Framework
-            </>
-          }
-        >
-          <ExpressIcon />
-        </Tooltip>
-      </>
-    ),
-  },
-  {
-    title: "Database",
-    tech: (
-      <>
-        <Tooltip
-          title={
-            <>
-              MySQL Database Service
-              <br />
-              Popular open-source relational database
-            </>
-          }
-        >
-          <MySqlIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              Microsoft SQL Server
-              <br />
-              Microsoft’s enterprise-grade SQL database
-            </>
-          }
-        >
-          <SqlServerIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              PostgreSQL
-              <br />
-              Advanced open-source relational database
-            </>
-          }
-        >
-          <PostgresIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              MongoDB
-              <br />
-              NoSQL database using flexible JSON-like documents
-            </>
-          }
-        >
-          <MongoDbIcon />
-        </Tooltip>
-      </>
-    ),
-  },
-  {
-    title: "Version Control",
-    tech: (
-      <>
-        <Tooltip
-          title={
-            <>
-              GitHub
-              <br />
-              Platform for hosting and collaborating on code
-            </>
-          }
-        >
-          <GitHubIcon />
-        </Tooltip>
-      </>
-    ),
-  },
-  {
-    title: "CI/CD",
-    tech: (
-      <>
-        <Tooltip
-          title={
-            <>
-              GitLab CI
-              <br />
-              Continuously build, test, and deploy code changes
-            </>
-          }
-        >
-          <GitlabIcon />
-        </Tooltip>
-      </>
-    ),
-  },
-  {
-    title: "Tools",
-    tech: (
-      <>
-        <Tooltip
-          title={
-            <>
-              Visual Studio Code
-              <br />
-              Fast, customizable code editor by Microsoft
-            </>
-          }
-        >
-          <VsCodeIcon />
-        </Tooltip>
-        <Tooltip
-          title={
-            <>
-              IntelliJ IDEA
-              <br />
-              JetBrains IDE for professional Java development
-            </>
-          }
-        >
-          <IntellijIcon />
-        </Tooltip>
-      </>
-    ),
-  },
-];
-
 const SkillCard = ({ title, tech }: { title: string; tech: JSX.Element }) => (
   <div className="flex flex-col h-full max-w-md lg:max-w-sm rounded-lg border border-light-grey shadow-lg bg-white mb-4 py-4 px-4 space-y-8 transition-all duration-300">
     <div className="text-center text-3xl font-semibold italic !text-primary">
@@ -278,6 +47,269 @@ const SkillCard = ({ title, tech }: { title: string; tech: JSX.Element }) => (
 );
 
 const Skills = () => {
+  const { t } = useTranslation();
+
+  const linksEn = [
+    {
+      title: t("skills.title"),
+      description: t("skills.description"),
+    },
+  ];
+
+  const skillsEn = [
+    {
+      title: "Frontend",
+      tech: (
+        <>
+          <Tooltip
+            title={
+              <>
+                React
+                <br />
+                {t("skills.frontend.react")}
+              </>
+            }
+          >
+            <ReactIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Gatsby
+                <br />
+                {t("skills.frontend.gatsby")}
+              </>
+            }
+          >
+            <GatsbyIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Typescript
+                <br />
+                {t("skills.frontend.typescript")}
+              </>
+            }
+          >
+            <TypescriptIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Taiwind CSS
+                <br />
+                {t("skills.frontend.tailwind")}
+              </>
+            }
+          >
+            <TailwindIcon />
+          </Tooltip>
+        </>
+      ),
+    },
+    {
+      title: "Backend",
+      tech: (
+        <>
+          <Tooltip
+            title={
+              <>
+                Java
+                <br />
+                {t("skills.backend.java")}
+              </>
+            }
+          >
+            <JavaIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Spring Boot
+                <br />
+                {t("skills.backend.springBoot")}
+              </>
+            }
+          >
+            <SpringIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Node.js
+                <br />
+                {t("skills.backend.node")}
+              </>
+            }
+          >
+            <NodeIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Express.js
+                <br />
+                {t("skills.backend.express")}
+              </>
+            }
+          >
+            <ExpressIcon />
+          </Tooltip>
+        </>
+      ),
+    },
+    {
+      title: "Database",
+      tech: (
+        <>
+          <Tooltip
+            title={
+              <>
+                MySQL Database Service
+                <br />
+                {t("skills.database.mysql")}
+              </>
+            }
+          >
+            <MySqlIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Microsoft SQL Server
+                <br />
+                {t("skills.database.sqlServer")}
+              </>
+            }
+          >
+            <SqlServerIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                PostgreSQL
+                <br />
+                {t("skills.database.postgresql")}
+              </>
+            }
+          >
+            <PostgresIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                MongoDB
+                <br />
+                {t("skills.database.mongodb")}
+              </>
+            }
+          >
+            <MongoDbIcon />
+          </Tooltip>
+        </>
+      ),
+    },
+    {
+      title: "Version Control",
+      tech: (
+        <>
+          <Tooltip
+            title={
+              <>
+                Git
+                <br />
+                {t("skills.versionControl.git")}
+              </>
+            }
+          >
+            <GitIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                GitHub
+                <br />
+                {t("skills.versionControl.github")}
+              </>
+            }
+          >
+            <GitHubIcon />
+          </Tooltip>
+        </>
+      ),
+    },
+    {
+      title: "CI/CD",
+      tech: (
+        <>
+          <Tooltip
+            title={
+              <>
+                GitLab CI
+                <br />
+                {t("skills.cicd.gitlabCi")}
+              </>
+            }
+          >
+            <GitlabIcon />
+          </Tooltip>
+        </>
+      ),
+    },
+    {
+      title: "Tools",
+      tech: (
+        <>
+          <Tooltip
+            title={
+              <>
+                Visual Studio Code
+                <br />
+                {t("skills.tools.vsCode")}
+              </>
+            }
+          >
+            <VsCodeIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                IntelliJ IDEA
+                <br />
+                {t("skills.tools.intellij")}
+              </>
+            }
+          >
+            <IntellijIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Docker
+                <br />
+                {t("skills.tools.docker")}
+              </>
+            }
+          >
+            <DockerIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Postman
+                <br />
+                {t("skills.tools.postman")}
+              </>
+            }
+          >
+            <PostmanIcon />
+          </Tooltip>
+        </>
+      ),
+    },
+  ];
+
   return (
     <section
       id="SKILLS"

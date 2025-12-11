@@ -1,89 +1,4 @@
-const linksEn = [
-  {
-    title: "My Resume",
-    description: "My professional and academic background.",
-    intro:
-      "Since graduating, I have quickly entered the professional world, which allows me to develop my skills on a daily basis.",
-  },
-];
-
-const professionalEn = [
-  {
-    title: "Zeno Inno",
-    contract: "Full time",
-    start_date: "August 2024",
-    end_date: "Ongoing",
-    job: "Software Developer",
-    description:
-      "Creating dynamic user interfaces with React. Integrating reusable components using Tailwind CSS. Working closely with product teams to improve user experience.",
-  },
-  {
-    title: "Zeno Inno",
-    contract: "Internship",
-    start_date: "May 2024",
-    end_date: "July 2024",
-    job: "Intern Software Developer",
-    description:
-      "Implemented a batch processing system with Spring Batch targeting a PostgreSQL database, and developed a drag-and-drop UI feature using React.",
-  },
-  {
-    title: "Personal Project",
-    contract: "Side project",
-    start_date: "Dec 2023",
-    end_date: "Mars 2024",
-    job: "3D Model Designer",
-    description:
-      "Designed and modeled a realistic 3D donut using Blender, focusing on shape, texture, and lighting. Created a decorative background to enhance visual appeal and scene composition, emphasizing color harmony and depth. This project demonstrated proficiency in 3D modeling, materials, and rendering techniques.",
-  },
-  {
-    title: "Software Overseas Academy (SOA)",
-    contract: "Fixed-term contract",
-    start_date: "April 2023",
-    end_date: "October 2023",
-    job: "Software Application Developer",
-    description:
-      "Responsible for the development and maintenance of the application. Designed and integrated end-to-end tests as part of a major application redesign to ensure system reliability and performance.",
-  },
-  {
-    title: "Inclusiv Academy",
-    contract: "Bootcamp",
-    start_date: "October 2022",
-    end_date: "April 2023",
-    job: "Digital Application Designer & Developer",
-    description:
-      "- Project Web: Conceived and implemented a web application using React.js, Spring Boot, and PostgreSQL. This platform connects farmers directly with end customers, enhancing the agricultural supply chain. \n- Project Desktop: Designed and developed a desktop application using Visual Studio, WPF (.NET Framework, C#), and PostgreSQL. The app facilitates connections between freelancers and companies, streamlining the hiring process.",
-  },
-  {
-    title: "Your Target Agency",
-    contract: "Internship",
-    start_date: "October 2021",
-    end_date: "Mars 2022",
-    job: "Intern Wordpress Developer",
-    description:
-      '- Implemented a local development environment using XAMPP. \n- Developed and launched a real estate website using WordPress. \n- Redesigned the webmaster-madagascar.com website with WordPress Elementor. \n- Integrated product listings for the supermarket "Kibo" on PrestaShop. \n- Created and managed a blog page on the Best Place website.',
-  },
-];
-
-const academicEn = [
-  {
-    title: "Inclusiv Academy",
-    degree:
-      "RNCP Level 6 certification, equivalent to the first year of a Master's degree",
-    start_date: "Septembre 2022",
-    end_date: "April 2023",
-    description:
-      "Obtained RNCP Level 6 certification, recognized as equivalent to the first year of a Master’s degree in France.",
-  },
-  {
-    title: "Espace Universitaire Régional de l'Océan Indien (EUROI)",
-    degree:
-      "Professional Bachelor's Degree in Electronics / Computer Science / Telecommunications",
-    start_date: "August 2017",
-    end_date: "June 2022",
-    description:
-      "Obtained a Professional Bachelor's Degree in Electronics, Computer Science, and Telecommunications after successfully defending my thesis.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Timeline = ({
   items,
@@ -156,29 +71,46 @@ const Timeline = ({
 );
 
 const Resume = () => {
+  const { t } = useTranslation();
+
+  const links = [
+    {
+      title: t("resume.title"),
+      description: t("resume.description"),
+      sub_description: t("resume.sub_description"),
+    },
+  ];
+
+  const professional = t("resume.professional", {
+    returnObjects: true,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  }) as any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const academic = t("resume.academic", { returnObjects: true }) as any[];
+
   return (
     <section
       id="RESUME"
       className="relative flex flex-col items-center py-4 bg-dark-grey"
     >
-      {linksEn.map((link, index) => (
+      {links.map((link, index) => (
         <div key={index} className="section-container">
           <h2 className="title !text-white">{link.title}</h2>
           <p className="text-center text-3xl pb-6 !text-light-grey">
             {link.description}
           </p>
           <p className="text-center pb-12 !text-light-grey italic">
-            {link.intro}
+            {link.sub_description}
           </p>
 
           {/* Timeline expériences pro */}
-          <Timeline items={professionalEn} />
+          <Timeline items={professional} />
 
           {/* Titre diplômes */}
-          <h2 className="title !text-white mt-20">My Diplomas</h2>
+          <h2 className="title !text-white mt-20">{t("resume.diplomas")}</h2>
 
           {/* Timeline diplômes */}
-          <Timeline items={academicEn} isAcademic />
+          <Timeline items={academic} isAcademic />
         </div>
       ))}
     </section>

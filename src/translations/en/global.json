@@ -1,0 +1,215 @@
+{
+  "header": {
+    "name": "Heritiana R.",
+    "title": "My portfolio",
+    "home": "Home",
+    "works": "Works",
+    "skills": "Skills",
+    "about": "About",
+    "resume": "Resume",
+    "contact": "Contact",
+    "languages": "Languages"
+  },
+
+  "home": {
+    "greeting": "Hello, I am",
+    "name": "Heritiana Raveloson",
+    "role": "Software developer",
+    "contact": "Contact me",
+    "download": "Download CV",
+    "resume": "en"
+  },
+
+  "works": {
+    "title": "My Works",
+    "description": "Showcasing my projects and contributions",
+    "button": "View Details",
+    "work_1": {
+      "title": "Eto.mg",
+      "role": "Internship",
+      "description": "Comprehensive real estate website designed to facilitate transactions."
+    },
+    "work_2": {
+      "title": "TCA (Airport Circular Title)",
+      "role": "Thesis Defense for Bachelor's Degree",
+      "description": "Web application for requesting a permanent Airport Circular Title."
+    },
+    "work_3": {
+      "title": "Samysamy",
+      "role": "Exam Project",
+      "description": "Desktop application : Platform connecting freelancers and companies.",
+      "link" : "Frontend & Backend Repository"
+    },
+    "work_4": {
+      "title": "Mihary'ket",
+      "role": "Thesis Defense for Master's Degree",
+      "description": "Online sales platform for agricultural products.",
+      "link_1" : "Frontend Repository",
+      "link_2" : "Backend Repository"
+    },
+    "work_5": {
+      "title": "Blender - Donut",
+      "role": "Personal Project",
+      "description": "3D donut modeling project using Blender with Cycles render engine.",
+      "link" : "Download .blend File (requires Blender)"
+    },
+    "work_6": {
+      "title": "Zeno Landing Page",
+      "role": "Permanent Contract Mission",
+      "description": "Showcase site for Zeno.",
+      "link_1" : "Landing Page Repository",
+      "link_2" : "Zeno Official Website"
+    }
+  },
+
+  "skills": {
+    "title": "My Skills",
+    "description": "A showcase of my technical skills and expertise",
+    "frontend": {
+      "title": "Frontend",
+      "react": "Front-end JavaScript library",
+      "gatsby": "React-based open source framework",
+      "typescript": "A strongly typed programming language that builds on JavaScript",
+      "tailwind": "Utility-first CSS framework"
+    },
+    "backend": {
+      "title": "Backend",
+      "java": "High-level object-oriented programming language",
+      "springBoot": "Java framework / Spring Framework extension",
+      "node": "JavaScript runtime built on Chrome's V8 engine",
+      "express": "Minimalist web framework for Node.js"
+    },
+    "database": {
+      "title": "Database",
+      "mysql": "Relational database management system",
+      "sqlServer": "Microsoft’s enterprise-grade SQL database",
+      "postgresql": "Advanced open source relational database",
+      "mongodb": "NoSQL database using flexible JSON-like documents"
+    },
+    "versionControl": {
+      "title": "Version Control",
+      "git": "Distributed version control system",
+      "github": "Web-based hosting service for Git repositories"
+    },
+    "cicd": {
+      "title": "CI/CD",
+      "gitlabCi": "Built-in continuous integration tool of GitLab"
+    },
+    "tools": {
+      "title": "Tools",
+      "vsCode": "Source-code editor developed by Microsoft",
+      "intellij": "Java IDE for software development",
+      "docker": "Platform for developing, shipping, and running applications in containers",
+      "postman": "API development environment"
+    }
+  },
+
+  "about": {
+    "title": "About Me",
+    "description": "Software developer | Passionate about Innovation and New Challenges",
+    "expertise": "Specialized in <1>front-end</1> development with <3>back-end</3> knowledge, I design intuitive and high-performance user interfaces. My expertise in <5>JavaScript/TypeScript, and Java</5> allows me to transform creative ideas into responsive web applications.",
+    "paragraph": "Always on the lookout for the latest innovations, I strive to continuously improve my skills. I optimize performance and experiment with new approaches to create quality solutions that meet user needs.",
+    "contact" : "Contact me"
+  },
+
+  "resume": {
+    "title": "My Resume",
+    "description": "My professional and academic background",
+    "sub_description": "Since graduating, I have quickly entered the professional world, which allows me to develop my skills on a daily basis",
+    "diplomas": "My Diplomas",
+    "professional": [
+      {
+        "title": "Zeno Inno",
+        "contract": "Full time",
+        "start_date": "August 2024",
+        "end_date": "Ongoing",
+        "job": "Software Developer",
+        "description": "Creating dynamic user interfaces with React. Integrating reusable components using Tailwind CSS. Working closely with product teams to improve user experience."
+      },
+      {
+        "title": "Zeno Inno",
+        "contract": "Internship",
+        "start_date": "May 2024",
+        "end_date": "July 2024",
+        "job": "Intern Software Developer",
+        "description": "Implemented a batch processing system with Spring Batch targeting a PostgreSQL database, and developed a drag-and-drop UI feature using React."
+      },
+      {
+        "title": "Personal Project",
+        "contract": "Side project",
+        "start_date": "Dec 2023",
+        "end_date": "March 2024",
+        "job": "3D Model Designer",
+        "description": "Designed and modeled a realistic 3D donut using Blender, focusing on shape, texture, and lighting. Created a decorative background to enhance visual appeal and scene composition, emphasizing color harmony and depth. This project demonstrated proficiency in 3D modeling, materials, and rendering techniques."
+      },
+      {
+        "title": "Software Overseas Academy (SOA)",
+        "contract": "Fixed-term contract",
+        "start_date": "April 2023",
+        "end_date": "October 2023",
+        "job": "Software Application Developer",
+        "description": "Responsible for the development and maintenance of the application. Designed and integrated end-to-end tests as part of a major application redesign to ensure system reliability and performance."
+      },
+      {
+        "title": "Inclusiv Academy",
+        "contract": "Bootcamp",
+        "start_date": "October 2022",
+        "end_date": "April 2023",
+        "job": "Digital Application Designer & Developer",
+        "description": "- Web Project: Conceived and implemented a web application using React.js, Spring Boot, and PostgreSQL. This platform connects farmers directly with end customers, enhancing the agricultural supply chain.\n- Desktop Project: Designed and developed a desktop application using Visual Studio, WPF (.NET Framework, C#), and PostgreSQL. The app facilitates connections between freelancers and companies, streamlining the hiring process."
+      },
+      {
+        "title": "Your Target Agency",
+        "contract": "Internship",
+        "start_date": "October 2021",
+        "end_date": "March 2022",
+        "job": "Intern Wordpress Developer",
+        "description": "- Implemented a local development environment using XAMPP.\n- Developed and launched a real estate website using WordPress.\n- Redesigned the webmaster-madagascar.com website with WordPress Elementor.\n- Integrated product listings for the supermarket \"Kibo\" on PrestaShop.\n- Created and managed a blog page on the Best Place website."
+      }
+    ],
+
+    "academic": [
+      {
+        "title": "Inclusiv Academy",
+        "degree": "RNCP Level 6 certification, equivalent to the first year of a Master's degree",
+        "start_date": "September 2022",
+        "end_date": "April 2023",
+        "description": "Obtained RNCP Level 6 certification, recognized as equivalent to the first year of a Master’s degree."
+      },
+      {
+        "title": "Regional University Space of the Indian Ocean (EUROI)",
+        "degree": "Professional Bachelor's Degree in Electronics / Computer Science / Telecommunications",
+        "start_date": "August 2017",
+        "end_date": "June 2022",
+        "description": "Obtained a Professional Bachelor's Degree in Electronics, Computer Science, and Telecommunications after successfully defending my thesis."
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Contact Me",
+    "description": "Got a project to develop or a position to fill? Let’s talk!",
+    "name": "Full name",
+    "phone": "Phone number",
+    "email": "E-mail",
+    "message": "Message",
+    "button": "Send",
+    "loading": "Sending...",
+    "location": {
+      "title": "Location",
+      "contact": "Antananarivo 103, Madagascar"
+    },
+    "mail": {
+      "title": "E-mail",
+      "contact": "heriravel00@gmail.com"
+    },
+    "call": {
+      "title": "Call",
+      "contact": "+261 34 77 768 96"
+    }
+  },
+
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

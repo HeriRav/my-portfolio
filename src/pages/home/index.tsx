@@ -1,32 +1,17 @@
 import Me from "../../pages/home/assets/heritiana-colorless.png";
-import cv from "../../images/download/CV Heritiana RAVELOSON.pdf";
+import en from "../../images/download/en/Heritiana Raveloson(en).pdf";
+import fr from "../../images/download/fr/Heritiana Raveloson(fr).pdf";
 import LinkedInIcon from "./assets/linkedinIcon";
 import GitHubIcon from "./assets/githubIcon";
 import ParticleBackground from "../../components/ui/particle-background";
+import { useTranslation } from "react-i18next";
 
 const linksEn = [
   {
-    greeting: "Hello, I am",
-    name: "Heritiana Raveloson",
-    title: "Software developer",
     linkedin: "https://www.linkedin.com/in/heritiana-raveloson-564347236/",
     github: "https://github.com/HeriRav",
-    contact: "Contact me",
-    resume: "Download CV",
   },
 ];
-
-// const linkFr = [
-//   {
-//     greeting: 'Bonjour, je suis',
-//     name: 'Heritiana Raveloson',
-//     title: 'Développeur logiciel',
-//     linkedin: 'https://www.linkedin.com/in/heritiana-raveloson-564347236/',
-//     github: 'https://github.com/HeriRav',
-//     contact: 'Contactez-moi',
-//     resume: 'Télécharger CV',
-//   }
-// ]
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -38,6 +23,8 @@ const scrollToSection = (id: string) => {
 };
 
 const Home = () => {
+  const [t] = useTranslation("global");
+
   const handleScroll = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     id: string
@@ -60,15 +47,15 @@ const Home = () => {
               className="w-full lg:mt-44 lg:w-1/2 text-center lg:text-end space-y-6 p-8"
             >
               <div className="text-4xl font-light">
-                <p className="!text-white">{link.greeting}</p>
+                <p className="!text-white">{t("home.greeting")}</p>
               </div>
               <div className="text-4xl font-bold italic">
                 <p className="!text-transparent bg-clip-text bg-gradient-to-b md:bg-gradient-to-r from-primary md:from-30% lg:from-40% 2xl:from-70% to-secondary">
-                  {link.name}
+                  {t("home.name")}
                 </p>
               </div>
               <div className="text-xl font-semibold">
-                <p className="!text-light-grey">{link.title}</p>
+                <p className="!text-light-grey">{t("home.role")}</p>
               </div>
               <div className="flex items-center justify-center lg:justify-end lg:ml-auto space-x-4 py-1">
                 <a
@@ -94,14 +81,18 @@ const Home = () => {
                   className="btn-primary w-48 md:w-52 md:mr-2"
                   onClick={(e) => handleScroll(e, "CONTACT")}
                 >
-                  {link.contact} &#129146;
+                  {t("home.contact")} &#129146;
                 </a>
                 <a
-                  href={cv}
-                  download={cv}
+                  href={t("home.resume") === "en" ? en : fr}
+                  download={
+                    t("home.resume") === "en"
+                      ? "CV Heritiana RAVELOSON(en).pdf"
+                      : "CV Heritiana RAVELOSON(fr).pdf"
+                  }
                   className="btn-secondary w-48 md:w-52 md:ml-2"
                 >
-                  {link.resume} &#10515;
+                  {t("home.download")} &#10515;
                 </a>
               </div>
             </div>
