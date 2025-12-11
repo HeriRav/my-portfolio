@@ -26,6 +26,11 @@ const Header: React.FC<HeaderProps> = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [t, i18n] = useTranslation("global");
   const [showLangMenu, setShowLangMenu] = useState(false);
+  const [lang, setLang] = useState(localStorage.getItem("lang") || "en");
+
+  const handleActiveLanguage = (newLang: string) => {
+    setLang(newLang);
+  };
 
   const navigationLinks = navigationLinksKeys.map((link) => ({
     ...link,
@@ -157,21 +162,38 @@ const Header: React.FC<HeaderProps> = () => {
                 <button
                   onClick={() => {
                     handleChangeLanguage("en");
+                    handleActiveLanguage("en");
                     setShowLangMenu(false);
                   }}
-                  className="flex gap-x-2 px-4 py-2 hover:bg-primary text-left w-full transition-all"
+                  disabled={lang === "en"}
+                  className={`
+                    flex gap-x-2 px-4 py-2 text-left w-full transition-all
+                    ${
+                      lang === "en"
+                        ? "bg-primary text-black cursor-not-allowed opacity-70"
+                        : "hover:bg-primary cursor-pointer"
+                    }
+                  `}
                 >
                   <EnFlag /> EN
                 </button>
                 <button
                   onClick={() => {
                     handleChangeLanguage("fr");
+                    handleActiveLanguage("fr");
                     setShowLangMenu(false);
                   }}
-                  className="flex gap-x-2 px-4 py-2 hover:bg-primary text-left w-full transition-all"
+                  disabled={lang === "fr"}
+                  className={`
+                    flex gap-x-2 px-4 py-2 text-left w-full transition-all
+                    ${
+                      lang === "fr"
+                        ? "bg-primary text-black cursor-not-allowed opacity-70"
+                        : "hover:bg-primary cursor-pointer"
+                    }
+                  `}
                 >
-                  <FrFlag />
-                  FR
+                  <FrFlag /> FR
                 </button>
               </div>
             )}
