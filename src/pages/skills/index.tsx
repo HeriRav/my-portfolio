@@ -58,7 +58,7 @@ const Skills = () => {
 
   const skillsEn = [
     {
-      title: "Frontend",
+      title: t("skills.frontend.title"),
       tech: (
         <>
           <Tooltip
@@ -109,7 +109,7 @@ const Skills = () => {
       ),
     },
     {
-      title: "Backend",
+      title: t("skills.backend.title"),
       tech: (
         <>
           <Tooltip
@@ -160,7 +160,7 @@ const Skills = () => {
       ),
     },
     {
-      title: "Database",
+      title: t("skills.database.title"),
       tech: (
         <>
           <Tooltip
@@ -211,7 +211,7 @@ const Skills = () => {
       ),
     },
     {
-      title: "Version Control",
+      title: t("skills.versionControl.title"),
       tech: (
         <>
           <Tooltip
@@ -240,7 +240,7 @@ const Skills = () => {
       ),
     },
     {
-      title: "CI/CD",
+      title: t("skills.cicd.title"),
       tech: (
         <>
           <Tooltip
@@ -258,7 +258,7 @@ const Skills = () => {
       ),
     },
     {
-      title: "Tools",
+      title: t("skills.tools.title"),
       tech: (
         <>
           <Tooltip
