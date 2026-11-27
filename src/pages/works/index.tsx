@@ -189,11 +189,11 @@ const Works = () => {
       {/* Modal */}
       {selectedWork && (
         <div
-          className="animate-fadeIn duration-300 fixed inset-0 bg-gradient-to-br from-dark/90 via-primary/30 to-dark/90 backdrop-blur-sm flex justify-center items-center z-99"
+          className="animate-fadeIn duration-300 fixed inset-0 overflow-y-auto p-4 bg-gradient-to-br from-dark/90 via-primary/30 to-dark/90 backdrop-blur-sm flex justify-center items-start sm:items-center z-99"
           onClick={closeModal}
         >
           <div
-            className="duration-500 bg-white rounded-lg p-8 max-w-2xl w-full relative shadow-2xl border border-light-grey/50 backdrop-blur-md"
+            className="duration-500 bg-white rounded-lg p-4 sm:p-8 max-w-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto relative shadow-2xl border border-light-grey/50 backdrop-blur-md"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-row items-start mb-6">
