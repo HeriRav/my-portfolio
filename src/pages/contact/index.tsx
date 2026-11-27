@@ -51,7 +51,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -60,9 +60,9 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    const serviceId = "service_x2rdhcv";
-    const templateId = "template_wrbvlbn";
-    const publicKey = "zVJo-S3WOEH4qUyoB";
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     if (
       !formData.name ||
@@ -71,14 +71,14 @@ const Contact = () => {
       !formData.message
     ) {
       console.error("All fields are required");
-      toast.warn("All fields are required", { position: "top-center" });
+      toast.warn(t("contact.toast.warning"), { position: "top-center" });
       setLoading(false);
       return;
     }
 
     if (!emailRegex.test(formData.email)) {
       console.error("Invalid email format");
-      toast.warn("Invalid email format", { position: "top-center" });
+      toast.warn(t("contact.toast.invalid_mail"), { position: "top-center" });
       setLoading(false);
       return;
     }
@@ -93,7 +93,7 @@ const Contact = () => {
           from_email: formData.email,
           message: formData.message,
         },
-        publicKey
+        publicKey,
       )
       .then((response) => {
         console.log("Email sent successfully", response);
@@ -111,7 +111,7 @@ const Contact = () => {
   };
 
   const notify_success = () => {
-    toast.success("Message sent successfully!", {
+    toast.success(t("contact.toast.success"), {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -123,7 +123,7 @@ const Contact = () => {
   };
 
   const notify_failure = () => {
-    toast.error("Error sending message. Please try again.", {
+    toast.error(t("contact.toast.error"), {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
