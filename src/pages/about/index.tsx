@@ -1,5 +1,6 @@
 import { Trans, useTranslation } from "react-i18next";
 import AboutIcon from "./assets/about-icon.png";
+import { Globe } from "lucide-react";
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id);
@@ -29,12 +30,15 @@ const About: React.FC = () => {
       ),
       paragraph: t("about.paragraph"),
       contact: t("about.contact"),
+      portfolio: t("about.portfolio"),
+      link: t("about.link"),
+      link_name: t("about.link_name"),
     },
   ];
 
   const handleScroll = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    id: string
+    id: string,
   ) => {
     event.preventDefault();
     scrollToSection(id);
@@ -57,6 +61,16 @@ const About: React.FC = () => {
               </p>
               <p className="text-base">{link.expertise}</p>
               <p className="text-base">{link.paragraph}</p>
+              <p className="text-base">{link.portfolio}</p>
+              <a
+                className="flex items-center gap-2 !text-secondary hover:text-secondary-hover! underline text-lg transition-colors duration-200 w-fit"
+                href={link.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Globe />
+                {link.link_name}
+              </a>
               <div key={index} className="py-4">
                 <a
                   href="#CONTACT"
