@@ -1,7 +1,7 @@
 {
   "header": {
     "name": "Heritiana R.",
-    "title": "My portfolio",
+    "title": "My simplified portfolio",
     "home": "Home",
     "works": "Works",
     "skills": "Skills",
@@ -67,7 +67,9 @@
     "description": "A showcase of my technical skills and expertise",
     "frontend": {
       "title": "Frontend",
+      "javascript": "High-level programming language for web development",
       "react": "Front-end JavaScript library",
+      "nextjs": "React framework for server-side rendering and static site generation",
       "gatsby": "React-based open source framework",
       "typescript": "A strongly typed programming language that builds on JavaScript",
       "tailwind": "Utility-first CSS framework"
@@ -82,7 +84,6 @@
     "database": {
       "title": "Database",
       "mysql": "Relational database management system",
-      "sqlServer": "Microsoft’s enterprise-grade SQL database",
       "postgresql": "Advanced open source relational database",
       "mongodb": "NoSQL database using flexible JSON-like documents"
     },
@@ -93,6 +94,7 @@
     },
     "cicd": {
       "title": "CI/CD",
+      "githubactions": "Continuous integration and continuous delivery platform by GitHub",
       "gitlabCi": "Built-in continuous integration tool of GitLab"
     },
     "tools": {
@@ -100,7 +102,9 @@
       "vsCode": "Source-code editor developed by Microsoft",
       "intellij": "Java IDE for software development",
       "docker": "Platform for developing, shipping, and running applications in containers",
-      "postman": "API development environment"
+      "postman": "API development environment",
+      "ai_title": "Artificial Intelligence",
+      "ai": "Daily usage of artificial intelligence to improve efficiency and productivity in software development"
     }
   },
 
@@ -109,6 +113,9 @@
     "description": "Software developer | Passionate about Innovation and New Challenges",
     "expertise": "Specialized in <1>front-end</1> development with <3>back-end</3> knowledge, I design intuitive and high-performance user interfaces. My expertise in <5>JavaScript/TypeScript, and Java</5> allows me to transform creative ideas into responsive web applications.",
     "paragraph": "Always on the lookout for the latest innovations, I strive to continuously improve my skills. I optimize performance and experiment with new approaches to create quality solutions that meet user needs.",
+    "portfolio": "This portfolio represents the simplified version of my multipage portfolio site. If you want to know more, feel free to check it out:",
+    "link": "https://heritianaraveloson.vercel.app/",
+    "link_name": "Portfolio site",
     "contact" : "Contact me"
   },
 
@@ -206,6 +213,12 @@
     "call": {
       "title": "Call",
       "contact": "+261 34 77 768 96"
+    },
+    "toast": {
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred while sending your message. Please try again later.",
+      "invalid_mail": "Invalid email format",
+      "warning": "All fields are required"
     }
   },
 
