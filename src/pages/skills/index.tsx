@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import React, { useState } from "react";
 import ReactIcon from "./assets/reactIcon";
 import GatsbyIcon from "./assets/gatsbyIcon";
 import TypescriptIcon from "./assets/typescriptIcon";
@@ -8,7 +9,6 @@ import SpringIcon from "./assets/springIcon";
 import NodeIcon from "./assets/nodeIcon";
 import ExpressIcon from "./assets/expressIcon";
 import MySqlIcon from "./assets/mySqlIcon";
-import SqlServerIcon from "./assets/sqlServerIcon";
 import PostgresIcon from "./assets/postgresIcon";
 import MongoDbIcon from "./assets/mongoDbIcon";
 import GitlabIcon from "./assets/gitlabIcon";
@@ -18,7 +18,11 @@ import GitHubIcon from "./assets/gitHubIcon";
 import GitIcon from "./assets/gitIcon";
 import DockerIcon from "./assets/dockerIcon";
 import PostmanIcon from "./assets/postmanIcon";
+import GitHubActionsIcon from "./assets/gitHubActionsIcon";
 import { useTranslation } from "react-i18next";
+import JavascriptIcon from "./assets/javascriptIcon";
+import NextIcon from "./assets/nextIcon";
+import AiIcon from "./assets/aiIcon";
 
 const Tooltip = ({
   title,
@@ -26,17 +30,32 @@ const Tooltip = ({
 }: {
   title: React.ReactNode;
   children: React.ReactNode;
-}) => (
-  <div className="relative group flex flex-col items-center min-w-[56px] max-w-[72px]">
-    <div className="skill-icon cursor-help">{children}</div>
-    <div className="absolute z-50 bottom-full px-2 py-1 rounded bg-dark-grey text-light-grey text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal lg:whitespace-nowrap pointer-events-none">
-      {title}
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative group flex flex-col items-center min-w-[56px] max-w-[72px]">
+      <button
+        type="button"
+        className="skill-icon cursor-help"
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((open) => !open)}
+      >
+        {children}
+      </button>
+      <div
+        className={`absolute z-50 bottom-full px-2 py-1 rounded bg-dark-grey text-light-grey text-xs transition-opacity whitespace-normal lg:whitespace-nowrap pointer-events-none opacity-0 md:group-hover:opacity-100 ${
+          isOpen ? "opacity-100" : ""
+        }`}
+      >
+        {title}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const SkillCard = ({ title, tech }: { title: string; tech: JSX.Element }) => (
-  <div className="flex flex-col h-full max-w-md lg:max-w-sm rounded-lg border border-light-grey shadow-lg bg-white mb-4 py-4 px-4 space-y-8 transition-all duration-300">
+  <div className="flex flex-col h-full max-w-md lg:max-w-sm rounded-lg border border-light-grey shadow-lg bg-white py-4 px-4 space-y-8 transition-all duration-300">
     <div className="text-center text-3xl font-semibold italic !text-primary">
       {title}
     </div>
@@ -64,6 +83,17 @@ const Skills = () => {
           <Tooltip
             title={
               <>
+                JavaScript
+                <br />
+                {t("skills.frontend.javascript")}
+              </>
+            }
+          >
+            <JavascriptIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
                 React
                 <br />
                 {t("skills.frontend.react")}
@@ -71,6 +101,17 @@ const Skills = () => {
             }
           >
             <ReactIcon />
+          </Tooltip>
+          <Tooltip
+            title={
+              <>
+                Next.js
+                <br />
+                {t("skills.frontend.nextjs")}
+              </>
+            }
+          >
+            <NextIcon />
           </Tooltip>
           <Tooltip
             title={
@@ -177,17 +218,6 @@ const Skills = () => {
           <Tooltip
             title={
               <>
-                Microsoft SQL Server
-                <br />
-                {t("skills.database.sqlServer")}
-              </>
-            }
-          >
-            <SqlServerIcon />
-          </Tooltip>
-          <Tooltip
-            title={
-              <>
                 PostgreSQL
                 <br />
                 {t("skills.database.postgresql")}
@@ -243,6 +273,17 @@ const Skills = () => {
       title: t("skills.cicd.title"),
       tech: (
         <>
+          <Tooltip
+            title={
+              <>
+                GitHub Actions
+                <br />
+                {t("skills.cicd.githubactions")}
+              </>
+            }
+          >
+            <GitHubActionsIcon />
+          </Tooltip>
           <Tooltip
             title={
               <>
@@ -305,6 +346,17 @@ const Skills = () => {
           >
             <PostmanIcon />
           </Tooltip>
+          <Tooltip
+            title={
+              <>
+                {t("skills.tools.ai_title")}
+                <br />
+                {t("skills.tools.ai")}
+              </>
+            }
+          >
+            <AiIcon />
+          </Tooltip>
         </>
       ),
     },
@@ -322,7 +374,7 @@ const Skills = () => {
           <p className="text-center text-3xl mb-6 !text-dark-grey">
             {link.description}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-rows-fr items-stretch gap-4 max-w-5xl mx-auto">
             {skillsEn.map((skill, idx) => (
               <SkillCard key={idx} title={skill.title} tech={skill.tech} />
             ))}

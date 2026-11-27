@@ -1,7 +1,7 @@
 {
   "header": {
     "name": "Heritiana R.",
-    "title": "Mon portfolio",
+    "title": "Mon portfolio simplifié",
     "home": "Accueil",
     "works": "Réalisations",
     "skills": "Compétences",
@@ -67,7 +67,9 @@
     "description": "Un aperçu de mes compétences techniques et de mon expertise",
     "frontend": {
       "title": "Frontend",
+      "javascript": "Langage de programmation de haut niveau pour le développement web",
       "react": "Bibliothèque JavaScript pour le front-end",
+      "nextjs": "Framework React pour le rendu côté serveur et la génération de sites statiques",
       "gatsby": "Framework open source basé sur React",
       "typescript": "Langage fortement typé basé sur JavaScript",
       "tailwind": "Framework CSS basé sur des utilitaires"
@@ -82,7 +84,6 @@
     "database": {
       "title": "Base de Données",
       "mysql": "Système de gestion de base de données relationnelle",
-      "sqlServer": "Base de données SQL d’entreprise de Microsoft",
       "postgresql": "Base de données relationnelle open source avancée",
       "mongodb": "Base de données NoSQL utilisant des documents flexibles proches de JSON"
     },
@@ -93,6 +94,7 @@
     },
     "cicd": {
       "title": "CI/CD",
+      "githubactions": "Plateforme d’intégration continue et de livraison continue de GitHub",
       "gitlabCi": "Outil d’intégration continue intégré à GitLab"
     },
     "tools": {
@@ -100,7 +102,9 @@
       "vsCode": "Éditeur de code source développé par Microsoft",
       "intellij": "IDE Java pour le développement logiciel",
       "docker": "Plateforme pour développer, déployer et exécuter des applications dans des conteneurs",
-      "postman": "Environnement pour le développement d’API"
+      "postman": "Environnement pour le développement d’API",
+      "ai_title": "Intelligence Artificielle",
+      "ai": "Usage quotidien de l'intelligence artificielle pour améliorer l'efficacité et la productivité dans le développement logiciel"
     }
   },
 
@@ -109,6 +113,9 @@
     "description": "Développeur logiciel | Passionné par l’innovation et les nouveaux défis",
     "expertise": "Spécialisé dans le développement <1>front-end</1> avec des connaissances en <3>back-end</3>, je conçois des interfaces utilisateur intuitives et performantes. Mon expertise en <5>JavaScript/TypeScript et Java</5> me permet de transformer des idées créatives en applications web réactives.",
     "paragraph": "Toujours à l’affût des dernières innovations, je m’efforce d’améliorer continuellement mes compétences. J’optimise les performances et expérimente de nouvelles approches pour créer des solutions de qualité répondant aux besoins des utilisateurs.",
+    "portfolio": "Ce portfolio représente la version simplifiée de mon site portfolio (multipage). Si vous voulez en savoir plus, n’hésitez pas à consulter celui-ci :",
+    "link": "https://heritianaraveloson.vercel.app/",
+    "link_name": "Site Portfolio",
     "contact" : "Contactez moi"
   },
 
@@ -206,6 +213,12 @@
     "call": {
       "title": "Téléphone",
       "contact": "+261 34 77 768 96"
+    },
+    "toast": {
+      "success": "Votre message a été envoyé avec succès !",
+      "error": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard.",
+      "invalid_mail": "Format d'e-mail invalide",
+      "warning": "Tous les champs sont requis"
     }
   },
   
